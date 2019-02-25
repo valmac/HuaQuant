@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D06C936D-7F50-414E-90F5-7615A6A66D4B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SmartQuant.Providers</RootNamespace>
+    <AssemblyName>SmartQuant.Providers</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>4096</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SmartQuant">
+      <HintPath>..\SmartQuant\bin\Debug\SmartQuant.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartQuant.Data">
+      <HintPath>..\SmartQuant.Data\bin\Debug\SmartQuant.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartQuant.FIX">
+      <HintPath>..\SmartQuant.FIX\bin\Debug\SmartQuant.FIX.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartQuant.FIXData">
+      <HintPath>..\SmartQuant.FIXData\bin\Debug\SmartQuant.FIXData.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BarEventArgs.cs" />
+    <Compile Include="BarEventHandler.cs" />
+    <Compile Include="BarFactory.cs" />
+    <Compile Include="BarFactoryInput.cs" />
+    <Compile Include="BarFactoryItem.cs" />
+    <Compile Include="BarFactoryItemList.cs" />
+    <Compile Include="BarSliceEventArgs.cs" />
+    <Compile Include="BarSliceEventHandler.cs" />
+    <Compile Include="BrokerAccount.cs" />
+    <Compile Include="BrokerAccountField.cs" />
+    <Compile Include="BrokerAccountList.cs" />
+    <Compile Include="BrokerInfo.cs" />
+    <Compile Include="BrokerPosition.cs" />
+    <Compile Include="BrokerPositionField.cs" />
+    <Compile Include="CorporateActionEventArgs.cs" />
+    <Compile Include="CorporateActionEventHandler.cs" />
+    <Compile Include="Design\BarFactoryItemListEditor.cs" />
+    <Compile Include="Design\BarFactoryTypeConverter.cs" />
+    <Compile Include="Design\BarSizesTypeConverter.cs" />
+    <Compile Include="ExecutionProviderList.cs" />
+    <Compile Include="FundamentalEventArgs.cs" />
+    <Compile Include="FundamentalEventHandler.cs" />
+    <Compile Include="HistoricalBarEventArgs.cs" />
+    <Compile Include="HistoricalBarEventHandler.cs" />
+    <Compile Include="HistoricalDataErrorEventArgs.cs" />
+    <Compile Include="HistoricalDataErrorEventHandler.cs" />
+    <Compile Include="HistoricalDataEventArgs.cs" />
+    <Compile Include="HistoricalDataEventHandler.cs" />
+    <Compile Include="HistoricalDataProviderList.cs" />
+    <Compile Include="HistoricalDataRange.cs" />
+    <Compile Include="HistoricalDataRequest.cs" />
+    <Compile Include="HistoricalDataType.cs" />
+    <Compile Include="HistoricalMarketDepthEventArgs.cs" />
+    <Compile Include="HistoricalMarketDepthEventHandler.cs" />
+    <Compile Include="HistoricalQuoteEventArgs.cs" />
+    <Compile Include="HistoricalQuoteEventHandler.cs" />
+    <Compile Include="HistoricalTradeEventArgs.cs" />
+    <Compile Include="HistoricalTradeEventHandler.cs" />
+    <Compile Include="HistoryProviderList.cs" />
+    <Compile Include="IBarFactory.cs" />
+    <Compile Include="IExecutionProvider.cs" />
+    <Compile Include="IHistoricalDataProvider.cs" />
+    <Compile Include="IHistoryProvider.cs" />
+    <Compile Include="IInstrumentProvider.cs" />
+    <Compile Include="IMarketDataProvider.cs" />
+    <Compile Include="INewsProvider.cs" />
+    <Compile Include="InstrumentProviderList.cs" />
+    <Compile Include="IntradayEventArgs.cs" />
+    <Compile Include="IProvider.cs" />
+    <Compile Include="MarketDataEventArgs.cs" />
+    <Compile Include="MarketDataEventHandler.cs" />
+    <Compile Include="MarketDataProviderList.cs" />
+    <Compile Include="MarketDataSnapshotEventArgs.cs" />
+    <Compile Include="MarketDataSnapshotEventHandler.cs" />
+    <Compile Include="MarketDepthEventArgs.cs" />
+    <Compile Include="MarketDepthEventHandler.cs" />
+    <Compile Include="NamespaceDoc.cs" />
+    <Compile Include="NewsEventArgs.cs" />
+    <Compile Include="NewsEventHandler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProviderError.cs" />
+    <Compile Include="ProviderErrorCollection.cs" />
+    <Compile Include="ProviderErrorEventArgs.cs" />
+    <Compile Include="ProviderErrorEventHandler.cs" />
+    <Compile Include="ProviderEventArgs.cs" />
+    <Compile Include="ProviderEventHandler.cs" />
+    <Compile Include="ProviderId.cs" />
+    <Compile Include="ProviderList.cs" />
+    <Compile Include="ProviderManager.cs" />
+    <Compile Include="ProviderStatus.cs" />
+    <Compile Include="QuoteEventArgs.cs" />
+    <Compile Include="QuoteEventHandler.cs" />
+    <Compile Include="SecurityDefinitionEventArgs.cs" />
+    <Compile Include="SecurityDefinitionEventHandler.cs" />
+    <Compile Include="TradeEventArgs.cs" />
+    <Compile Include="TradeEventHandler.cs" />
+    <Compile Include="Xml\BarFactoryItemListXmlNode.cs" />
+    <Compile Include="Xml\BarFactoryItemXmlNode.cs" />
+    <Compile Include="Xml\BarFactoryXmlNode.cs" />
+    <Compile Include="Xml\PropertyListXmlNode.cs" />
+    <Compile Include="Xml\PropertyXmlNode.cs" />
+    <Compile Include="Xml\ProviderListXmlDocument.cs" />
+    <Compile Include="Xml\ProviderXmlNode.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

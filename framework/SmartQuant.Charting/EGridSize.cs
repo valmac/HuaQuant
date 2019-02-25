@@ -1,0 +1,71 @@
+﻿using System;
+
+namespace SmartQuant.Charting
+{
+	// Token: 0x02000051 RID: 81
+	public enum EGridSize : long
+	{
+		// Token: 0x040001F1 RID: 497
+		min1 = 600000000L,
+		// Token: 0x040001F2 RID: 498
+		min2 = 1200000000L,
+		// Token: 0x040001F3 RID: 499
+		min5 = 3000000000L,
+		// Token: 0x040001F4 RID: 500
+		min10 = 6000000000L,
+		// Token: 0x040001F5 RID: 501
+		min15 = 9000000000L,
+		// Token: 0x040001F6 RID: 502
+		min20 = 12000000000L,
+		// Token: 0x040001F7 RID: 503
+		min30 = 18000000000L,
+		// Token: 0x040001F8 RID: 504
+		hour1 = 36000000000L,
+		// Token: 0x040001F9 RID: 505
+		hour2 = 72000000000L,
+		// Token: 0x040001FA RID: 506
+		hour3 = 108000000000L,
+		// Token: 0x040001FB RID: 507
+		hour4 = 144000000000L,
+		// Token: 0x040001FC RID: 508
+		hour6 = 216000000000L,
+		// Token: 0x040001FD RID: 509
+		hour12 = 432000000000L,
+		// Token: 0x040001FE RID: 510
+		day1 = 864000000000L,
+		// Token: 0x040001FF RID: 511
+		day2 = 1728000000000L,
+		// Token: 0x04000200 RID: 512
+		day3 = 2592000000000L,
+		// Token: 0x04000201 RID: 513
+		day5 = 4320000000000L,
+		// Token: 0x04000202 RID: 514
+		week1 = 6048000000000L,
+		// Token: 0x04000203 RID: 515
+		week2 = 12096000000000L,
+		// Token: 0x04000204 RID: 516
+		month1 = 25920000000000L,
+		// Token: 0x04000205 RID: 517
+		month2 = 51840000000000L,
+		// Token: 0x04000206 RID: 518
+		month3 = 77760000000000L,
+		// Token: 0x04000207 RID: 519
+		month4 = 103680000000000L,
+		// Token: 0x04000208 RID: 520
+		month6 = 155520000000000L,
+		// Token: 0x04000209 RID: 521
+		year1 = 9460800000000000L,
+		// Token: 0x0400020A RID: 522
+		year2 = 18921600000000000L,
+		// Token: 0x0400020B RID: 523
+		year3 = 28382400000000000L,
+		// Token: 0x0400020C RID: 524
+		year4 = 37843200000000000L,
+		// Token: 0x0400020D RID: 525
+		year5 = 47304000000000000L,
+		// Token: 0x0400020E RID: 526
+		year10 = 94608000000000000L,
+		// Token: 0x0400020F RID: 527
+		year20 = 189216000000000000L
+	}
+}

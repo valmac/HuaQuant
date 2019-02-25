@@ -1,0 +1,13 @@
+﻿using System;
+
+namespace SmartQuant
+{
+	// Token: 0x0200002C RID: 44
+	internal enum IASSEMBLYCACHE_INSTALL_FLAG
+	{
+		// Token: 0x040000C6 RID: 198
+		IASSEMBLYCACHE_INSTALL_FLAG_REFRESH = 1,
+		// Token: 0x040000C7 RID: 199
+		IASSEMBLYCACHE_INSTALL_FLAG_FORCE_REFRESH
+	}
+}

@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7EE5D818-4A6B-4DB6-964E-BE77C330EB9D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SmartQuant.Testing</RootNamespace>
+    <AssemblyName>SmartQuant.Testing</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>4096</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SmartQuant">
+      <HintPath>..\SmartQuant\bin\Debug\SmartQuant.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartQuant.Business">
+      <HintPath>..\SmartQuant.Business\bin\Debug\SmartQuant.Business.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartQuant.Charting">
+      <HintPath>..\SmartQuant.Charting\bin\Debug\SmartQuant.Charting.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartQuant.FIX">
+      <HintPath>..\SmartQuant.FIX\bin\Debug\SmartQuant.FIX.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartQuant.Instruments">
+      <HintPath>..\SmartQuant.Instruments\bin\Debug\SmartQuant.Instruments.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartQuant.Series">
+      <HintPath>..\SmartQuant.Series\bin\Debug\SmartQuant.Series.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Components\TesterComponentAttribute.cs" />
+    <Compile Include="Components\TesterComponentEventArgs.cs" />
+    <Compile Include="Components\TesterComponentEventHandler.cs" />
+    <Compile Include="Components\TesterComponentManager.cs" />
+    <Compile Include="Components\TesterComponentRecord.cs" />
+    <Compile Include="Components\TesterComponentRecordList.cs" />
+    <Compile Include="Design\AddComponent_Tester.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\AddComponent_Tester.Designer.cs">
+      <DependentUpon>AddComponent_Tester.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\AddParentComponent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\AddParentComponent.Designer.cs">
+      <DependentUpon>AddParentComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\EditComponent_Tester.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\EditComponent_Tester.Designer.cs">
+      <DependentUpon>EditComponent_Tester.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\TesterComponentListTypeEditor.cs" />
+    <Compile Include="Design\TesterComponentTypeConverter.cs" />
+    <Compile Include="Design\TesterComponentTypeEditor.cs" />
+    <Compile Include="Design\TesterSaver.cs" />
+    <Compile Include="LiveTester.cs" />
+    <Compile Include="MathStatistics\Average.cs" />
+    <Compile Include="MathStatistics\Division.cs" />
+    <Compile Include="MathStatistics\Maximum.cs" />
+    <Compile Include="MathStatistics\Median.cs" />
+    <Compile Include="MathStatistics\Minimum.cs" />
+    <Compile Include="MathStatistics\Return.cs" />
+    <Compile Include="PerformanceTrackerList.cs" />
+    <Compile Include="Pertrac\CompoundAverageReturn.cs" />
+    <Compile Include="Pertrac\FinalWealth.cs" />
+    <Compile Include="Pertrac\GainDays.cs" />
+    <Compile Include="Pertrac\GainStandardDeviation.cs" />
+    <Compile Include="Pertrac\InitialWealth.cs" />
+    <Compile Include="Pertrac\Kurtosis.cs" />
+    <Compile Include="Pertrac\LossDays.cs" />
+    <Compile Include="Pertrac\LossStandardDeviation.cs" />
+    <Compile Include="Pertrac\MARRatio.cs" />
+    <Compile Include="Pertrac\ModifiedSharpeRatio.cs" />
+    <Compile Include="Pertrac\PercentageOfProfitableForPeriod.cs" />
+    <Compile Include="Pertrac\ReturnForPeriod.cs" />
+    <Compile Include="Pertrac\SharpeRatio.cs" />
+    <Compile Include="Pertrac\SimpleItem.cs" />
+    <Compile Include="Pertrac\Skewness.cs" />
+    <Compile Include="Pertrac\SotrinoRatio.cs" />
+    <Compile Include="Pertrac\StandardDeviation.cs" />
+    <Compile Include="Pertrac\TotalDays.cs" />
+    <Compile Include="Pertrac\TradeDays.cs" />
+    <Compile Include="Pertrac\VaR.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoundTripsStatistics\AllRoundTripsTotalPnL.cs" />
+    <Compile Include="RoundTripsStatistics\ConsecutiveLosers.cs" />
+    <Compile Include="RoundTripsStatistics\ConsecutiveWinners.cs" />
+    <Compile Include="RoundTripsStatistics\LargestLosingRoundTrip.cs" />
+    <Compile Include="RoundTripsStatistics\LargestWinningRoundTrip.cs" />
+    <Compile Include="RoundTripsStatistics\LosingRoundTrips.cs" />
+    <Compile Include="RoundTripsStatistics\LosingRoundTripsDuration.cs" />
+    <Compile Include="RoundTripsStatistics\LosingRoundTripsTotalPnL.cs" />
+    <Compile Include="RoundTripsStatistics\LosingRoundTripsValues.cs" />
+    <Compile Include="RoundTripsStatistics\NumberOfRoundTrips.cs" />
+    <Compile Include="RoundTripsStatistics\OpenRoundTripValue.cs" />
+    <Compile Include="RoundTripsStatistics\RoundTripsDuration.cs" />
+    <Compile Include="RoundTripsStatistics\RoundTripsEntryEfficiency.cs" />
+    <Compile Include="RoundTripsStatistics\RoundTripsExitEfficiency.cs" />
+    <Compile Include="RoundTripsStatistics\RoundTripsValues.cs" />
+    <Compile Include="RoundTripsStatistics\TotalRoundTripsEfficiency.cs" />
+    <Compile Include="RoundTripsStatistics\WinningRoundTrips.cs" />
+    <Compile Include="RoundTripsStatistics\WinningRoundTripsDuration.cs" />
+    <Compile Include="RoundTripsStatistics\WinningRoundTripsTotalPnL.cs" />
+    <Compile Include="RoundTripsStatistics\WinningRoundTripsValues.cs" />
+    <Compile Include="RoundTrips\OpenRoundTripList.cs" />
+    <Compile Include="RoundTrips\RoundTrip.cs" />
+    <Compile Include="RoundTrips\RoundTripArray.cs" />
+    <Compile Include="RoundTrips\RoundTripList.cs" />
+    <Compile Include="RoundTrips\RoundTripListEnumerator.cs" />
+    <Compile Include="RoundTrips\RoundTripListEventArgs.cs" />
+    <Compile Include="RoundTrips\RoundTripListEventHandler.cs" />
+    <Compile Include="RoundTrips\RoundTripStatus.cs" />
+    <Compile Include="RoundTrips\RoundTripsTesterItem.cs" />
+    <Compile Include="TesterEventHandler.cs" />
+    <Compile Include="TesterItems\ComponentNameEventArgs.cs" />
+    <Compile Include="TesterItems\CumulativeAnnualSeries.cs" />
+    <Compile Include="TesterItems\CumulativeDailySeries.cs" />
+    <Compile Include="TesterItems\CumulativeMonthlySeries.cs" />
+    <Compile Include="TesterItems\NegativeSeries.cs" />
+    <Compile Include="TesterItems\PositiveSeries.cs" />
+    <Compile Include="TesterItems\SeriesTesterItem.cs" />
+    <Compile Include="TesterItems\SimpleAnnualSeries.cs" />
+    <Compile Include="TesterItems\SimpleDailySeries.cs" />
+    <Compile Include="TesterItems\SimpleMonthlySeries.cs" />
+    <Compile Include="TesterItems\SimpleSeriesItem.cs" />
+    <Compile Include="TesterItems\TesterComponentNameEventHandler.cs" />
+    <Compile Include="TesterItems\TesterItem.cs" />
+    <Compile Include="TesterItems\TesterItemEventHandler.cs" />
+    <Compile Include="TesterItems\TesterItemList.cs" />
+    <Compile Include="TesterSettings.cs" />
+    <Compile Include="TimeIntervalSize.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Design\AddComponent_Tester.resources" />
+    <EmbeddedResource Include="Design\AddParentComponent.resources" />
+    <EmbeddedResource Include="Design\EditComponent_Tester.resources" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

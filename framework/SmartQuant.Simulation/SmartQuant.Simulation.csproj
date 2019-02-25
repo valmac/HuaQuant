@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{36196BA3-5F55-45D7-8A8F-456CD977EBD1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SmartQuant.Simulation</RootNamespace>
+    <AssemblyName>SmartQuant.Simulation</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>4096</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SmartQuant">
+      <HintPath>..\SmartQuant\bin\Debug\SmartQuant.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartQuant.Data">
+      <HintPath>..\SmartQuant.Data\bin\Debug\SmartQuant.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartQuant.Execution">
+      <HintPath>..\SmartQuant.Execution\bin\Debug\SmartQuant.Execution.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartQuant.FIX">
+      <HintPath>..\SmartQuant.FIX\bin\Debug\SmartQuant.FIX.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartQuant.FIXData">
+      <HintPath>..\SmartQuant.FIXData\bin\Debug\SmartQuant.FIXData.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartQuant.Instruments">
+      <HintPath>..\SmartQuant.Instruments\bin\Debug\SmartQuant.Instruments.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartQuant.Providers">
+      <HintPath>..\SmartQuant.Providers\bin\Debug\SmartQuant.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartQuant.Services">
+      <HintPath>..\SmartQuant.Services\bin\Debug\SmartQuant.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartQuant.Xml">
+      <HintPath>..\SmartQuant.Xml\bin\Debug\SmartQuant.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BarFilter.cs" />
+    <Compile Include="BarFilterItem.cs" />
+    <Compile Include="BarObject.cs" />
+    <Compile Include="CommissionProvider.cs" />
+    <Compile Include="CustomCommissionProvider.cs" />
+    <Compile Include="Design\BarFilterItemListEditor.cs" />
+    <Compile Include="Design\BarFilterTypeConverter.cs" />
+    <Compile Include="Design\CommissionProviderTypeConverter.cs" />
+    <Compile Include="Design\DataSeriesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\DataSeriesForm.Designer.cs">
+      <DependentUpon>DataSeriesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\DataSeriesListEditor.cs" />
+    <Compile Include="Design\DataSeriesViewItem.cs" />
+    <Compile Include="Design\InstrumentItem.cs" />
+    <Compile Include="Design\OrderEntryDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\OrderEntryDetailsForm.Designer.cs">
+      <DependentUpon>OrderEntryDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\OrderEntryListComparer.cs" />
+    <Compile Include="Design\OrderEntryListEditor.cs" />
+    <Compile Include="Design\OrderEntryListEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\OrderEntryListEditorForm.Designer.cs">
+      <DependentUpon>OrderEntryListEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\OrderEntryViewItem.cs" />
+    <Compile Include="Design\SimulatorEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\SimulatorEditorForm.Designer.cs">
+      <DependentUpon>SimulatorEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\SimulatorTypeEditor.cs" />
+    <Compile Include="Design\SlippageProviderTypeConverter.cs" />
+    <Compile Include="ExceptionEventArgs.cs" />
+    <Compile Include="ExceptionEventHandler.cs" />
+    <Compile Include="FillOnBarMode.cs" />
+    <Compile Include="FillOnQuoteMode.cs" />
+    <Compile Include="FillOnTradeMode.cs" />
+    <Compile Include="ICommissionProvider.cs" />
+    <Compile Include="Interval.cs" />
+    <Compile Include="IntervalEventArgs.cs" />
+    <Compile Include="IntervalEventHandler.cs" />
+    <Compile Include="IntervalList.cs" />
+    <Compile Include="ISlippageProvider.cs" />
+    <Compile Include="OrderEntry.cs" />
+    <Compile Include="OrderEntryList.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.cs" />
+    <Compile Include="QueueEntry.cs" />
+    <Compile Include="QueueEntry2.cs" />
+    <Compile Include="SeriesObjectEventArgs.cs" />
+    <Compile Include="SeriesObjectEventHandler.cs" />
+    <Compile Include="SimulationDataProvider.cs" />
+    <Compile Include="SimulationExecutionProcessor.cs" />
+    <Compile Include="SimulationExecutionProvider.cs" />
+    <Compile Include="SimulationExecutionService.cs" />
+    <Compile Include="SimulationMode.cs" />
+    <Compile Include="Simulator.cs" />
+    <Compile Include="SimulatorState.cs" />
+    <Compile Include="SlippageProvider.cs" />
+    <Compile Include="Xml\OrderEntryListXmlNode.cs" />
+    <Compile Include="Xml\OrderEntryXmlNode.cs" />
+    <Compile Include="Xml\SimulationExecutionServiceXmlDocument.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Design\DataSeriesForm.resources" />
+    <EmbeddedResource Include="Design\OrderEntryDetailsForm.resources" />
+    <EmbeddedResource Include="Design\OrderEntryListEditorForm.resources" />
+    <EmbeddedResource Include="Design\SimulatorEditorForm.resources" />
+    <EmbeddedResource Include="Properties\Resources.resources" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

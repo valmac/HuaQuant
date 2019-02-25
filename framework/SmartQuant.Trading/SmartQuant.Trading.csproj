@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B6715F4A-1097-4533-9803-CF646E1AE9E8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SmartQuant.Trading</RootNamespace>
+    <AssemblyName>SmartQuant.Trading</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>4096</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SmartQuant">
+      <HintPath>..\SmartQuant\bin\Debug\SmartQuant.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartQuant.Charting">
+      <HintPath>..\SmartQuant.Charting\bin\Debug\SmartQuant.Charting.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartQuant.Data">
+      <HintPath>..\SmartQuant.Data\bin\Debug\SmartQuant.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartQuant.Execution">
+      <HintPath>..\SmartQuant.Execution\bin\Debug\SmartQuant.Execution.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartQuant.FIX">
+      <HintPath>..\SmartQuant.FIX\bin\Debug\SmartQuant.FIX.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartQuant.FIXData">
+      <HintPath>..\SmartQuant.FIXData\bin\Debug\SmartQuant.FIXData.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartQuant.Instruments">
+      <HintPath>..\SmartQuant.Instruments\bin\Debug\SmartQuant.Instruments.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartQuant.Optimization">
+      <HintPath>..\SmartQuant.Optimization\bin\Debug\SmartQuant.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartQuant.Providers">
+      <HintPath>..\SmartQuant.Providers\bin\Debug\SmartQuant.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartQuant.Series">
+      <HintPath>..\SmartQuant.Series\bin\Debug\SmartQuant.Series.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartQuant.Services">
+      <HintPath>..\SmartQuant.Services\bin\Debug\SmartQuant.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartQuant.Simulation">
+      <HintPath>..\SmartQuant.Simulation\bin\Debug\SmartQuant.Simulation.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartQuant.Testing">
+      <HintPath>..\SmartQuant.Testing\bin\Debug\SmartQuant.Testing.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ATSComponent.cs" />
+    <Compile Include="ATSCrossComponent.cs" />
+    <Compile Include="ATSMetaStrategy.cs" />
+    <Compile Include="ATSStop.cs" />
+    <Compile Include="ATSStrategy.cs" />
+    <Compile Include="ATSStrategyMultiComponent.cs" />
+    <Compile Include="ATSStrategySingleComponent.cs" />
+    <Compile Include="BarSlice.cs" />
+    <Compile Include="BarSliceManager.cs" />
+    <Compile Include="BoolParam.cs" />
+    <Compile Include="ComponentBase.cs" />
+    <Compile Include="ComponentEventArgs.cs" />
+    <Compile Include="ComponentEventHandler.cs" />
+    <Compile Include="ComponentRecord.cs" />
+    <Compile Include="ComponentType.cs" />
+    <Compile Include="ComponentTypeEventArgs.cs" />
+    <Compile Include="ComponentTypeEventHandler.cs" />
+    <Compile Include="Conditions\Condition.cs" />
+    <Compile Include="Conditions\CrossLevelCondition.cs" />
+    <Compile Include="Conditions\CrossSeriesCondition.cs" />
+    <Compile Include="Conditions\EntryRule.cs" />
+    <Compile Include="Conditions\RuleItem.cs" />
+    <Compile Include="Conditions\RuleItemList.cs" />
+    <Compile Include="Conditions\RulesParser.cs" />
+    <Compile Include="Conditions\SignalItem.cs" />
+    <Compile Include="Conditions\SignalItemType.cs" />
+    <Compile Include="CrossEntry.cs" />
+    <Compile Include="CrossExit.cs" />
+    <Compile Include="Design\ATSComponentTypeEditor.cs" />
+    <Compile Include="Design\ATSCrossComponentTypeEditor.cs" />
+    <Compile Include="Design\ComboBoxItem.cs" />
+    <Compile Include="Design\ComboBoxTypeEditor.cs" />
+    <Compile Include="Design\ComponentTypeConverter.cs" />
+    <Compile Include="Design\ComponentTypeEditor.cs" />
+    <Compile Include="Design\CrossEntryTypeEditor.cs" />
+    <Compile Include="Design\CrossExitTypeEditor.cs" />
+    <Compile Include="Design\EntryTypeEditor.cs" />
+    <Compile Include="Design\ExecutionManagerTypeEditor.cs" />
+    <Compile Include="Design\ExecutionProviderTypeEditor.cs" />
+    <Compile Include="Design\ExecutionServiceTypeEditor.cs" />
+    <Compile Include="Design\ExitTypeEditor.cs" />
+    <Compile Include="Design\ExposureManagerTypeEditor.cs" />
+    <Compile Include="Design\MarketDataProviderTypeEditor.cs" />
+    <Compile Include="Design\MarketManagerTypeEditor.cs" />
+    <Compile Include="Design\MetaExposureManagerTypeEditor.cs" />
+    <Compile Include="Design\MetaMoneyManagerTypeEditor.cs" />
+    <Compile Include="Design\MetaRiskManagerTypeEditor.cs" />
+    <Compile Include="Design\MoneyManagerTypeEditor.cs" />
+    <Compile Include="Design\NewRequestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\NewRequestForm.Designer.cs">
+      <DependentUpon>NewRequestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\OptimizationManagerTypeEditor.cs" />
+    <Compile Include="Design\PortfolioTypeEditor.cs" />
+    <Compile Include="Design\ProviderTypeConverter.cs" />
+    <Compile Include="Design\ReportManagerTypeEditor.cs" />
+    <Compile Include="Design\RequestListEditor.cs" />
+    <Compile Include="Design\RiskManagerTypeEditor.cs" />
+    <Compile Include="Design\ServiceTypeConverter.cs" />
+    <Compile Include="Design\SimulationManagerTypeEditor.cs" />
+    <Compile Include="DoubleParam.cs" />
+    <Compile Include="Entry.cs" />
+    <Compile Include="EntryEventArgs.cs" />
+    <Compile Include="EntryEventHandler.cs" />
+    <Compile Include="ExecutionManager.cs" />
+    <Compile Include="ExecutionServiceDispatcher.cs" />
+    <Compile Include="Exit.cs" />
+    <Compile Include="ExitEventArgs.cs" />
+    <Compile Include="ExitEventHandler.cs" />
+    <Compile Include="ExposureManager.cs" />
+    <Compile Include="IComponentBase.cs" />
+    <Compile Include="IMetaStrategyComponent.cs" />
+    <Compile Include="IntParam.cs" />
+    <Compile Include="IStop.cs" />
+    <Compile Include="IStrategyComponent.cs" />
+    <Compile Include="MarketDataDispatcher.cs" />
+    <Compile Include="MarketManager.cs" />
+    <Compile Include="MetaExposureManager.cs" />
+    <Compile Include="MetaMoneyManager.cs" />
+    <Compile Include="MetaRiskManager.cs" />
+    <Compile Include="MetaStrategy.cs" />
+    <Compile Include="MetaStrategyBase.cs" />
+    <Compile Include="MetaStrategyBaseComponent.cs" />
+    <Compile Include="MetaStrategyComponent.cs" />
+    <Compile Include="MetaStrategyErrorEventArgs.cs" />
+    <Compile Include="MetaStrategyErrorEventHandler.cs" />
+    <Compile Include="MetaStrategyMode.cs" />
+    <Compile Include="MoneyManager.cs" />
+    <Compile Include="MultiInstrumentComponent.cs" />
+    <Compile Include="NamedOrderTable.cs" />
+    <Compile Include="OptimizationManager.cs" />
+    <Compile Include="OrderProcessor.cs" />
+    <Compile Include="OrderServicePair.cs" />
+    <Compile Include="OrderTable.cs" />
+    <Compile Include="PortfolioStop.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProviderDispatcher.cs" />
+    <Compile Include="ReportManager.cs" />
+    <Compile Include="RequestList.cs" />
+    <Compile Include="RiskManager.cs" />
+    <Compile Include="SeriesParam.cs" />
+    <Compile Include="ServiceDispatcher.cs" />
+    <Compile Include="Signal.cs" />
+    <Compile Include="SignalEventArgs.cs" />
+    <Compile Include="SignalEventHandler.cs" />
+    <Compile Include="SignalList.cs" />
+    <Compile Include="SignalSide.cs" />
+    <Compile Include="SignalStatus.cs" />
+    <Compile Include="SignalType.cs" />
+    <Compile Include="SimulationManager.cs" />
+    <Compile Include="SingleInstrumentComponent.cs" />
+    <Compile Include="Stop.cs" />
+    <Compile Include="StopBase.cs" />
+    <Compile Include="StopEventArgs.cs" />
+    <Compile Include="StopEventHandler.cs" />
+    <Compile Include="StopFillMode.cs" />
+    <Compile Include="StopList.cs" />
+    <Compile Include="StopMode.cs" />
+    <Compile Include="StopStatus.cs" />
+    <Compile Include="StopType.cs" />
+    <Compile Include="Strategy.cs" />
+    <Compile Include="StrategyBase.cs" />
+    <Compile Include="StrategyBaseMultiComponent.cs" />
+    <Compile Include="StrategyBaseSingleComponent.cs" />
+    <Compile Include="StrategyComponentAttribute.cs" />
+    <Compile Include="StrategyComponentList.cs" />
+    <Compile Include="StrategyComponentManager.cs" />
+    <Compile Include="StrategyEventArgs.cs" />
+    <Compile Include="StrategyEventHandler.cs" />
+    <Compile Include="StrategyList.cs" />
+    <Compile Include="StrategyMultiComponent.cs" />
+    <Compile Include="StrategySingleComponent.cs" />
+    <Compile Include="Trigger.cs" />
+    <Compile Include="TriggerEventArgs.cs" />
+    <Compile Include="TriggerEventHandler.cs" />
+    <Compile Include="TriggerList.cs" />
+    <Compile Include="TriggerStatus.cs" />
+    <Compile Include="TriggerType.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Design\NewRequestForm.resources" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

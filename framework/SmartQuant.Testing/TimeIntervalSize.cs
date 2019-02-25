@@ -1,0 +1,83 @@
+﻿using System;
+
+namespace SmartQuant.Testing
+{
+	// Token: 0x02000027 RID: 39
+	public enum TimeIntervalSize : long
+	{
+		// Token: 0x0400004A RID: 74
+		sec1 = 10000000L,
+		// Token: 0x0400004B RID: 75
+		sec2 = 20000000L,
+		// Token: 0x0400004C RID: 76
+		sec5 = 50000000L,
+		// Token: 0x0400004D RID: 77
+		sec10 = 100000000L,
+		// Token: 0x0400004E RID: 78
+		sec20 = 200000000L,
+		// Token: 0x0400004F RID: 79
+		sec30 = 300000000L,
+		// Token: 0x04000050 RID: 80
+		min1 = 600000000L,
+		// Token: 0x04000051 RID: 81
+		min5 = 3000000000L,
+		// Token: 0x04000052 RID: 82
+		min10 = 6000000000L,
+		// Token: 0x04000053 RID: 83
+		min15 = 9000000000L,
+		// Token: 0x04000054 RID: 84
+		min20 = 12000000000L,
+		// Token: 0x04000055 RID: 85
+		min30 = 18000000000L,
+		// Token: 0x04000056 RID: 86
+		hour1 = 36000000000L,
+		// Token: 0x04000057 RID: 87
+		hour2 = 72000000000L,
+		// Token: 0x04000058 RID: 88
+		hour3 = 108000000000L,
+		// Token: 0x04000059 RID: 89
+		hour4 = 144000000000L,
+		// Token: 0x0400005A RID: 90
+		hour6 = 216000000000L,
+		// Token: 0x0400005B RID: 91
+		hour12 = 432000000000L,
+		// Token: 0x0400005C RID: 92
+		day1 = 864000000000L,
+		// Token: 0x0400005D RID: 93
+		day2 = 1728000000000L,
+		// Token: 0x0400005E RID: 94
+		day3 = 2592000000000L,
+		// Token: 0x0400005F RID: 95
+		day5 = 4320000000000L,
+		// Token: 0x04000060 RID: 96
+		week1 = 6048000000000L,
+		// Token: 0x04000061 RID: 97
+		week2 = 12096000000000L,
+		// Token: 0x04000062 RID: 98
+		month1 = 25920000000000L,
+		// Token: 0x04000063 RID: 99
+		month2 = 51840000000000L,
+		// Token: 0x04000064 RID: 100
+		month3 = 77760000000000L,
+		// Token: 0x04000065 RID: 101
+		month4 = 103680000000000L,
+		// Token: 0x04000066 RID: 102
+		month6 = 155520000000000L,
+		// Token: 0x04000067 RID: 103
+		month9 = 233280000000000L,
+		// Token: 0x04000068 RID: 104
+		year1 = 9460800000000000L,
+		// Token: 0x04000069 RID: 105
+		year2 = 18921600000000000L,
+		// Token: 0x0400006A RID: 106
+		year3 = 28382400000000000L,
+		// Token: 0x0400006B RID: 107
+		year4 = 37843200000000000L,
+		// Token: 0x0400006C RID: 108
+		year5 = 47304000000000000L,
+		// Token: 0x0400006D RID: 109
+		year10 = 94608000000000000L,
+		// Token: 0x0400006E RID: 110
+		year20 = 189216000000000000L
+	}
+}

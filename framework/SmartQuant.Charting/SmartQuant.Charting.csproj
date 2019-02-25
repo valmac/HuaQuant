@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FC59C734-75E9-4A86-A154-262B578F267E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SmartQuant.Charting</RootNamespace>
+    <AssemblyName>SmartQuant.Charting</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>4096</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SmartQuant.Quant">
+      <HintPath>..\SmartQuant.Quant\bin\Debug\SmartQuant.Quant.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Axis.cs" />
+    <Compile Include="Canvas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Canvas.Designer.cs">
+      <DependentUpon>Canvas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CanvasList.cs" />
+    <Compile Include="CanvasManager.cs" />
+    <Compile Include="Chart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Draw3D\EChartLook.cs" />
+    <Compile Include="Draw3D\ESmoothing.cs" />
+    <Compile Include="Draw3D\TAxisCalc.cs" />
+    <Compile Include="Draw3D\TColor.cs" />
+    <Compile Include="Draw3D\TExchangeYZ.cs" />
+    <Compile Include="Draw3D\TFunction.cs" />
+    <Compile Include="Draw3D\TLight.cs" />
+    <Compile Include="Draw3D\TMat3x3.cs" />
+    <Compile Include="Draw3D\TMat3x3Diagonal.cs" />
+    <Compile Include="Draw3D\TRotX.cs" />
+    <Compile Include="Draw3D\TRotY.cs" />
+    <Compile Include="Draw3D\TRotZ.cs" />
+    <Compile Include="Draw3D\TSpecialProjection.cs" />
+    <Compile Include="Draw3D\TSurface.cs" />
+    <Compile Include="Draw3D\TVec3.cs" />
+    <Compile Include="Draw3D\TView.cs" />
+    <Compile Include="EAxisLabelAlignment.cs" />
+    <Compile Include="EAxisPosition.cs" />
+    <Compile Include="EAxisTitlePosition.cs" />
+    <Compile Include="EAxisType.cs" />
+    <Compile Include="EGraphMoveStyle.cs" />
+    <Compile Include="EGraphStyle.cs" />
+    <Compile Include="EGridSize.cs" />
+    <Compile Include="ELegendPosition.cs" />
+    <Compile Include="EMarkerStyle.cs" />
+    <Compile Include="EMarkerTextPosition.cs" />
+    <Compile Include="EMouseWheelMode.cs" />
+    <Compile Include="EPalette.cs" />
+    <Compile Include="EPrintAlign.cs" />
+    <Compile Include="EPrintLayout.cs" />
+    <Compile Include="ETextBoxPosition.cs" />
+    <Compile Include="ETextPosition.cs" />
+    <Compile Include="ETitlePosition.cs" />
+    <Compile Include="ETitleStrategy.cs" />
+    <Compile Include="ETransformationType.cs" />
+    <Compile Include="EVerticalGridStyle.cs" />
+    <Compile Include="Graph.cs" />
+    <Compile Include="Histogram.cs" />
+    <Compile Include="Histogram2D.cs" />
+    <Compile Include="IChartTransformation.cs" />
+    <Compile Include="IDrawable.cs" />
+    <Compile Include="IMovable.cs" />
+    <Compile Include="IZoomable.cs" />
+    <Compile Include="NewTickEventArgs.cs" />
+    <Compile Include="NewTickEventHandler.cs" />
+    <Compile Include="Pad.cs" />
+    <Compile Include="PadList.cs" />
+    <Compile Include="PadProperyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PadProperyForm.Designer.cs">
+      <DependentUpon>PadProperyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PadRange.cs" />
+    <Compile Include="Pie.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TDistance.cs" />
+    <Compile Include="TEmptyTransformation.cs" />
+    <Compile Include="TImage.cs" />
+    <Compile Include="TIntradayTransformation.cs" />
+    <Compile Include="TLabel.cs" />
+    <Compile Include="TLegend.cs" />
+    <Compile Include="TLegendItem.cs" />
+    <Compile Include="TLine.cs" />
+    <Compile Include="TMarker.cs" />
+    <Compile Include="TPaintingBitmap.cs" />
+    <Compile Include="TPieItem.cs" />
+    <Compile Include="TText.cs" />
+    <Compile Include="TTextBox.cs" />
+    <Compile Include="TTextBoxItem.cs" />
+    <Compile Include="TTitle.cs" />
+    <Compile Include="TTitleItem.cs" />
+    <Compile Include="ZoomEventArgs.cs" />
+    <Compile Include="ZoomEventHandler.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Canvas.resources" />
+    <EmbeddedResource Include="Chart.resources" />
+    <EmbeddedResource Include="PadProperyForm.resources" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

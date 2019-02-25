@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5621A0DA-8D8B-427B-A5BF-16D9CF2285D5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SmartQuant.Xml</RootNamespace>
+    <AssemblyName>SmartQuant.Xml</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>4096</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BooleanValueXmlNode.cs" />
+    <Compile Include="ByteValueXmlNode.cs" />
+    <Compile Include="DateTimeValueXmlNode.cs" />
+    <Compile Include="DecimalValueXmlNode.cs" />
+    <Compile Include="DoubleValueXmlNode.cs" />
+    <Compile Include="EnumValueXmlNode.cs" />
+    <Compile Include="FloatValueXmlNode.cs" />
+    <Compile Include="GuidValueXmlNode.cs" />
+    <Compile Include="Int16ValueXmlNode.cs" />
+    <Compile Include="Int32ValueXmlNode.cs" />
+    <Compile Include="Int64ValueXmlNode.cs" />
+    <Compile Include="ListXmlNode.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropertyListXmlNode.cs" />
+    <Compile Include="PropertyXmlNode.cs" />
+    <Compile Include="StringValueXmlNode.cs" />
+    <Compile Include="TypeValueXmlNode.cs" />
+    <Compile Include="ValueXmlNode.cs" />
+    <Compile Include="XmlDocumentBase.cs" />
+    <Compile Include="XmlNodeBase.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
