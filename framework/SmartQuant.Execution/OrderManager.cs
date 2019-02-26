@@ -465,11 +465,12 @@ namespace SmartQuant.Execution
 		// Token: 0x04000019 RID: 25
 		private static OrderListTable fOrders = new OrderListTable();
 
-		// Token: 0x0400001A RID: 26
-		private static IOrderServer fServer = new OrderOleDbServer();
+        // Token: 0x0400001A RID: 26
+        //private static IOrderServer fServer = new OrderOleDbServer();
+        private static IOrderServer fServer = new OrderSQLiteServer();
 
-		// Token: 0x0400001B RID: 27
-		private static Hashtable fOCA = new Hashtable();
+        // Token: 0x0400001B RID: 27
+        private static Hashtable fOCA = new Hashtable();
 
 		// Token: 0x0400001C RID: 28
 		private static OrderManager.SellSideService sellSide = new OrderManager.SellSideService();

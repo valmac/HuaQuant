@@ -1,0 +1,35 @@
+<?xml version="1.0" standalone="yes"?>
+<types>
+  <xs:schema id="types" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="types" msdata:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="type">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="name" type="xs:string" minOccurs="0" />
+                <xs:element name="id" type="xs:unsignedByte" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <type>
+    <name>SmartQuant.Data.Daily, SmartQuant.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=844f265c18b031f9</name>
+    <id>0</id>
+  </type>
+  <type>
+    <name>SmartQuant.Data.Trade, SmartQuant.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=844f265c18b031f9</name>
+    <id>2</id>
+  </type>
+  <type>
+    <name>SmartQuant.Data.Quote, SmartQuant.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=844f265c18b031f9</name>
+    <id>1</id>
+  </type>
+  <type>
+    <name>SmartQuant.Data.Bar, SmartQuant.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=844f265c18b031f9</name>
+    <id>3</id>
+  </type>
+</types>

@@ -34,24 +34,6 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="SmartQuant">
-      <HintPath>..\SmartQuant\bin\Debug\SmartQuant.dll</HintPath>
-    </Reference>
-    <Reference Include="SmartQuant.Business">
-      <HintPath>..\SmartQuant.Business\bin\Debug\SmartQuant.Business.dll</HintPath>
-    </Reference>
-    <Reference Include="SmartQuant.Charting">
-      <HintPath>..\SmartQuant.Charting\bin\Debug\SmartQuant.Charting.dll</HintPath>
-    </Reference>
-    <Reference Include="SmartQuant.FIX">
-      <HintPath>..\SmartQuant.FIX\bin\Debug\SmartQuant.FIX.dll</HintPath>
-    </Reference>
-    <Reference Include="SmartQuant.Instruments">
-      <HintPath>..\SmartQuant.Instruments\bin\Debug\SmartQuant.Instruments.dll</HintPath>
-    </Reference>
-    <Reference Include="SmartQuant.Series">
-      <HintPath>..\SmartQuant.Series\bin\Debug\SmartQuant.Series.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
@@ -169,6 +151,32 @@
     <EmbeddedResource Include="Design\AddComponent_Tester.resources" />
     <EmbeddedResource Include="Design\AddParentComponent.resources" />
     <EmbeddedResource Include="Design\EditComponent_Tester.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SmartQuant.Business\SmartQuant.Business.csproj">
+      <Project>{7d6908bf-6f30-4f85-859c-31b73d82c554}</Project>
+      <Name>SmartQuant.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartQuant.Charting\SmartQuant.Charting.csproj">
+      <Project>{fc59c734-75e9-4a86-a154-262b578f267e}</Project>
+      <Name>SmartQuant.Charting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartQuant.FIX\SmartQuant.FIX.csproj">
+      <Project>{fe44f098-0688-43a3-93fe-b5c085716bfe}</Project>
+      <Name>SmartQuant.FIX</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartQuant.Instruments\SmartQuant.Instruments.csproj">
+      <Project>{7b3ae873-aedb-48eb-85c8-2a3b5c2bd27d}</Project>
+      <Name>SmartQuant.Instruments</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartQuant.Series\SmartQuant.Series.csproj">
+      <Project>{ef4047f6-0dbd-4ddf-8e67-65cca57ddef7}</Project>
+      <Name>SmartQuant.Series</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartQuant\SmartQuant.csproj">
+      <Project>{ca226c7d-18c7-4ee0-bf25-4b97f70e9537}</Project>
+      <Name>SmartQuant</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

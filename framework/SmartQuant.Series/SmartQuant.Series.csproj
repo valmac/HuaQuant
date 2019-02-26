@@ -34,12 +34,6 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="SmartQuant.Charting">
-      <HintPath>..\SmartQuant.Charting\bin\Debug\SmartQuant.Charting.dll</HintPath>
-    </Reference>
-    <Reference Include="SmartQuant.Data">
-      <HintPath>..\SmartQuant.Data\bin\Debug\SmartQuant.Data.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
   </ItemGroup>
@@ -70,6 +64,16 @@
     <Compile Include="TimeSeries.cs" />
     <Compile Include="TradeArray.cs" />
     <Compile Include="TradeArrayEventArgs.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SmartQuant.Charting\SmartQuant.Charting.csproj">
+      <Project>{fc59c734-75e9-4a86-a154-262b578f267e}</Project>
+      <Name>SmartQuant.Charting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartQuant.Data\SmartQuant.Data.csproj">
+      <Project>{dc5ef2ad-bd9f-4359-9053-0ea421c74304}</Project>
+      <Name>SmartQuant.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

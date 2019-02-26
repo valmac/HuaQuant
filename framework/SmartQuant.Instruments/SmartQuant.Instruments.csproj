@@ -11,6 +11,8 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>4096</FileAlignment>
     <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,32 +36,24 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="SmartQuant">
-      <HintPath>..\SmartQuant\bin\Debug\SmartQuant.dll</HintPath>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="SmartQuant.Charting">
-      <HintPath>..\SmartQuant.Charting\bin\Debug\SmartQuant.Charting.dll</HintPath>
-    </Reference>
-    <Reference Include="SmartQuant.Data">
-      <HintPath>..\SmartQuant.Data\bin\Debug\SmartQuant.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="SmartQuant.File">
-      <HintPath>..\SmartQuant.File\bin\Debug\SmartQuant.File.dll</HintPath>
-    </Reference>
-    <Reference Include="SmartQuant.FIX">
-      <HintPath>..\SmartQuant.FIX\bin\Debug\SmartQuant.FIX.dll</HintPath>
-    </Reference>
-    <Reference Include="SmartQuant.FIXData">
-      <HintPath>..\SmartQuant.FIXData\bin\Debug\SmartQuant.FIXData.dll</HintPath>
-    </Reference>
-    <Reference Include="SmartQuant.Providers">
-      <HintPath>..\SmartQuant.Providers\bin\Debug\SmartQuant.Providers.dll</HintPath>
-    </Reference>
-    <Reference Include="SmartQuant.Series">
-      <HintPath>..\SmartQuant.Series\bin\Debug\SmartQuant.Series.dll</HintPath>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite, Version=1.0.109.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Data.SQLite.Core.1.0.109.2\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.109.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Data.SQLite.EF6.1.0.109.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.109.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Data.SQLite.Linq.1.0.109.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
@@ -108,6 +102,7 @@
     <Compile Include="InstrumentList.cs" />
     <Compile Include="InstrumentManager.cs" />
     <Compile Include="InstrumentOleDbServer.cs" />
+    <Compile Include="InstrumentSQLiteServer.cs" />
     <Compile Include="IPortfolioPricer.cs" />
     <Compile Include="IPortfolioServer.cs" />
     <Compile Include="IPricer.cs" />
@@ -126,6 +121,7 @@
     <Compile Include="PortfolioManager.cs" />
     <Compile Include="PortfolioOleDbServer.cs" />
     <Compile Include="PortfolioPricer.cs" />
+    <Compile Include="PortfolioSQLiteServer.cs" />
     <Compile Include="Position.cs" />
     <Compile Include="PositionEventArgs.cs" />
     <Compile Include="PositionEventHandler.cs" />
@@ -150,5 +146,50 @@
     <Compile Include="Xml\DataManagerXmlDocument.cs" />
     <Compile Include="Xml\DefaultBarXmlNode.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SmartQuant.Charting\SmartQuant.Charting.csproj">
+      <Project>{fc59c734-75e9-4a86-a154-262b578f267e}</Project>
+      <Name>SmartQuant.Charting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartQuant.Data\SmartQuant.Data.csproj">
+      <Project>{dc5ef2ad-bd9f-4359-9053-0ea421c74304}</Project>
+      <Name>SmartQuant.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartQuant.File\SmartQuant.File.csproj">
+      <Project>{e7674d4f-eb9a-4ea5-a489-806b14623bf8}</Project>
+      <Name>SmartQuant.File</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartQuant.FIXData\SmartQuant.FIXData.csproj">
+      <Project>{c9d901c9-69fc-4cf8-a4b7-0fa10e9d69c0}</Project>
+      <Name>SmartQuant.FIXData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartQuant.FIX\SmartQuant.FIX.csproj">
+      <Project>{fe44f098-0688-43a3-93fe-b5c085716bfe}</Project>
+      <Name>SmartQuant.FIX</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartQuant.Providers\SmartQuant.Providers.csproj">
+      <Project>{d06c936d-7f50-414e-90f5-7615a6a66d4b}</Project>
+      <Name>SmartQuant.Providers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartQuant.Series\SmartQuant.Series.csproj">
+      <Project>{ef4047f6-0dbd-4ddf-8e67-65cca57ddef7}</Project>
+      <Name>SmartQuant.Series</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartQuant\SmartQuant.csproj">
+      <Project>{ca226c7d-18c7-4ee0-bf25-4b97f70e9537}</Project>
+      <Name>SmartQuant</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets'))" />
+  </Target>
 </Project>

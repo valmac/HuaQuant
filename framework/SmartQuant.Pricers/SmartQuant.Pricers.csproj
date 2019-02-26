@@ -41,12 +41,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="SmartQuant.FIX">
-      <HintPath>..\SmartQuant.FIX\bin\Debug\SmartQuant.FIX.dll</HintPath>
-    </Reference>
-    <Reference Include="SmartQuant.Instruments">
-      <HintPath>..\SmartQuant.Instruments\bin\Debug\SmartQuant.Instruments.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\SmartQuant.FIX\SmartQuant.FIX.csproj">
+      <Project>{fe44f098-0688-43a3-93fe-b5c085716bfe}</Project>
+      <Name>SmartQuant.FIX</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartQuant.Instruments\SmartQuant.Instruments.csproj">
+      <Project>{7b3ae873-aedb-48eb-85c8-2a3b5c2bd27d}</Project>
+      <Name>SmartQuant.Instruments</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

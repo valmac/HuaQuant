@@ -49,9 +49,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="SmartQuant.Data">
-      <HintPath>..\SmartQuant.Data\bin\Debug\SmartQuant.Data.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\SmartQuant.Data\SmartQuant.Data.csproj">
+      <Project>{dc5ef2ad-bd9f-4359-9053-0ea421c74304}</Project>
+      <Name>SmartQuant.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

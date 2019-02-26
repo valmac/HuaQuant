@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{70A5AFA4-A784-42AD-AB78-18775145E95A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test", "ConsoleApp1\test.csproj", "{70A5AFA4-A784-42AD-AB78-18775145E95A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartQuant", "framework\SmartQuant\SmartQuant.csproj", "{CA226C7D-18C7-4EE0-BF25-4B97F70E9537}"
 EndProject
@@ -44,6 +44,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartQuant.Trading", "framework\SmartQuant.Trading\SmartQuant.Trading.csproj", "{B6715F4A-1097-4533-9803-CF646E1AE9E8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartQuant.Xml", "framework\SmartQuant.Xml\SmartQuant.Xml.csproj", "{5621A0DA-8D8B-427B-A5BF-16D9CF2285D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartQuant.Services", "framework\SmartQuant.Services\SmartQuant.Services.csproj", "{C549D585-3DDF-4B1F-93CD-C7122FB12F2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartQuant.Neural", "framework\SmartQuant.Neural\SmartQuant.Neural.csproj", "{3866BA0A-9128-4C8B-9758-8FBED8CE1249}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -135,6 +139,14 @@ Global
 		{5621A0DA-8D8B-427B-A5BF-16D9CF2285D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5621A0DA-8D8B-427B-A5BF-16D9CF2285D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5621A0DA-8D8B-427B-A5BF-16D9CF2285D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C549D585-3DDF-4B1F-93CD-C7122FB12F2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C549D585-3DDF-4B1F-93CD-C7122FB12F2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C549D585-3DDF-4B1F-93CD-C7122FB12F2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C549D585-3DDF-4B1F-93CD-C7122FB12F2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3866BA0A-9128-4C8B-9758-8FBED8CE1249}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3866BA0A-9128-4C8B-9758-8FBED8CE1249}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3866BA0A-9128-4C8B-9758-8FBED8CE1249}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3866BA0A-9128-4C8B-9758-8FBED8CE1249}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

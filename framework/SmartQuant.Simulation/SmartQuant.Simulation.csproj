@@ -34,33 +34,6 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="SmartQuant">
-      <HintPath>..\SmartQuant\bin\Debug\SmartQuant.dll</HintPath>
-    </Reference>
-    <Reference Include="SmartQuant.Data">
-      <HintPath>..\SmartQuant.Data\bin\Debug\SmartQuant.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="SmartQuant.Execution">
-      <HintPath>..\SmartQuant.Execution\bin\Debug\SmartQuant.Execution.dll</HintPath>
-    </Reference>
-    <Reference Include="SmartQuant.FIX">
-      <HintPath>..\SmartQuant.FIX\bin\Debug\SmartQuant.FIX.dll</HintPath>
-    </Reference>
-    <Reference Include="SmartQuant.FIXData">
-      <HintPath>..\SmartQuant.FIXData\bin\Debug\SmartQuant.FIXData.dll</HintPath>
-    </Reference>
-    <Reference Include="SmartQuant.Instruments">
-      <HintPath>..\SmartQuant.Instruments\bin\Debug\SmartQuant.Instruments.dll</HintPath>
-    </Reference>
-    <Reference Include="SmartQuant.Providers">
-      <HintPath>..\SmartQuant.Providers\bin\Debug\SmartQuant.Providers.dll</HintPath>
-    </Reference>
-    <Reference Include="SmartQuant.Services">
-      <HintPath>..\SmartQuant.Services\bin\Debug\SmartQuant.Services.dll</HintPath>
-    </Reference>
-    <Reference Include="SmartQuant.Xml">
-      <HintPath>..\SmartQuant.Xml\bin\Debug\SmartQuant.Xml.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
@@ -148,6 +121,44 @@
     <EmbeddedResource Include="Design\OrderEntryListEditorForm.resources" />
     <EmbeddedResource Include="Design\SimulatorEditorForm.resources" />
     <EmbeddedResource Include="Properties\Resources.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SmartQuant.Data\SmartQuant.Data.csproj">
+      <Project>{dc5ef2ad-bd9f-4359-9053-0ea421c74304}</Project>
+      <Name>SmartQuant.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartQuant.Execution\SmartQuant.Execution.csproj">
+      <Project>{5a015a7d-487a-4215-ac21-2e970169bcf2}</Project>
+      <Name>SmartQuant.Execution</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartQuant.FIXData\SmartQuant.FIXData.csproj">
+      <Project>{c9d901c9-69fc-4cf8-a4b7-0fa10e9d69c0}</Project>
+      <Name>SmartQuant.FIXData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartQuant.FIX\SmartQuant.FIX.csproj">
+      <Project>{fe44f098-0688-43a3-93fe-b5c085716bfe}</Project>
+      <Name>SmartQuant.FIX</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartQuant.Instruments\SmartQuant.Instruments.csproj">
+      <Project>{7b3ae873-aedb-48eb-85c8-2a3b5c2bd27d}</Project>
+      <Name>SmartQuant.Instruments</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartQuant.Providers\SmartQuant.Providers.csproj">
+      <Project>{d06c936d-7f50-414e-90f5-7615a6a66d4b}</Project>
+      <Name>SmartQuant.Providers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartQuant.Services\SmartQuant.Services.csproj">
+      <Project>{c549d585-3ddf-4b1f-93cd-c7122fb12f2e}</Project>
+      <Name>SmartQuant.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartQuant.Xml\SmartQuant.Xml.csproj">
+      <Project>{5621a0da-8d8b-427b-a5bf-16d9cf2285d5}</Project>
+      <Name>SmartQuant.Xml</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartQuant\SmartQuant.csproj">
+      <Project>{ca226c7d-18c7-4ee0-bf25-4b97f70e9537}</Project>
+      <Name>SmartQuant</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

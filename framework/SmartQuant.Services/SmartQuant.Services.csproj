@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C549D585-3DDF-4B1F-93CD-C7122FB12F2E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SmartQuant.Services</RootNamespace>
+    <AssemblyName>SmartQuant.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>4096</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ExecutionServiceEventArgs.cs" />
+    <Compile Include="ExecutionServiceList.cs" />
+    <Compile Include="IExecutionService.cs" />
+    <Compile Include="IMarketService.cs" />
+    <Compile Include="IService.cs" />
+    <Compile Include="LogonEventArgs.cs" />
+    <Compile Include="LogonEventHandler.cs" />
+    <Compile Include="LogoutEventArgs.cs" />
+    <Compile Include="LogoutEventHandler.cs" />
+    <Compile Include="MarketServiceEventArgs.cs" />
+    <Compile Include="NewOrderSingleEventArgs.cs" />
+    <Compile Include="NewOrderSingleEventHandler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceBase.cs" />
+    <Compile Include="ServiceError.cs" />
+    <Compile Include="ServiceErrorEventArgs.cs" />
+    <Compile Include="ServiceErrorEventHandler.cs" />
+    <Compile Include="ServiceErrorList.cs" />
+    <Compile Include="ServiceErrorType.cs" />
+    <Compile Include="ServiceEventArgs.cs" />
+    <Compile Include="ServiceEventHandler.cs" />
+    <Compile Include="ServiceId.cs" />
+    <Compile Include="ServiceList.cs" />
+    <Compile Include="ServiceManager.cs" />
+    <Compile Include="ServiceStatus.cs" />
+    <Compile Include="Xml\ServiceListXmlNode.cs" />
+    <Compile Include="Xml\ServicePropertiesXmlDocument.cs" />
+    <Compile Include="Xml\ServiceXmlNode.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SmartQuant.FIX\SmartQuant.FIX.csproj">
+      <Project>{fe44f098-0688-43a3-93fe-b5c085716bfe}</Project>
+      <Name>SmartQuant.FIX</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartQuant.Xml\SmartQuant.Xml.csproj">
+      <Project>{5621a0da-8d8b-427b-a5bf-16d9cf2285d5}</Project>
+      <Name>SmartQuant.Xml</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartQuant\SmartQuant.csproj">
+      <Project>{ca226c7d-18c7-4ee0-bf25-4b97f70e9537}</Project>
+      <Name>SmartQuant</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

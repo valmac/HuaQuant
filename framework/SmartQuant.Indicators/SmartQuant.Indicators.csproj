@@ -34,14 +34,17 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="SmartQuant.Charting">
-      <HintPath>..\SmartQuant.Charting\bin\Debug\SmartQuant.Charting.dll</HintPath>
+    <Reference Include="SmartQuant.Charting, Version=1.0.2919.25576, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\SmartQuant\SmartQuant.Charting\bin\Debug\SmartQuant.Charting.dll</HintPath>
     </Reference>
-    <Reference Include="SmartQuant.Data">
-      <HintPath>..\SmartQuant.Data\bin\Debug\SmartQuant.Data.dll</HintPath>
+    <Reference Include="SmartQuant.Data, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\SmartQuant\SmartQuant.Data\bin\Debug\SmartQuant.Data.dll</HintPath>
     </Reference>
-    <Reference Include="SmartQuant.Series">
-      <HintPath>..\SmartQuant.Series\bin\Debug\SmartQuant.Series.dll</HintPath>
+    <Reference Include="SmartQuant.Series, Version=1.0.2919.25577, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\SmartQuant\SmartQuant.Series\bin\Debug\SmartQuant.Series.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Drawing" />

@@ -121,11 +121,11 @@ namespace SmartQuant.Instruments
 			}
 		}
 
-		// Token: 0x040000F0 RID: 240
-		private static IInstrumentServer fServer = new InstrumentOleDbServer();
-
-		// Token: 0x040000F1 RID: 241
-		private static InstrumentList fInstruments = new InstrumentList();
+        // Token: 0x040000F0 RID: 240
+        //private static IInstrumentServer fServer = new InstrumentOleDbServer();
+        private static IInstrumentServer fServer = new InstrumentSQLiteServer();
+        // Token: 0x040000F1 RID: 241
+        private static InstrumentList fInstruments = new InstrumentList();
 
 		// Token: 0x040000F2 RID: 242
 		private static Hashtable fLists = new Hashtable();
