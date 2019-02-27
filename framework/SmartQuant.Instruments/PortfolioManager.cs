@@ -23,8 +23,8 @@ namespace SmartQuant.Instruments
 		// Token: 0x0600004C RID: 76 RVA: 0x00002976 File Offset: 0x00001976
 		static PortfolioManager()
 		{
-            //PortfolioManager.server = new PortfolioOleDbServer();
-            PortfolioManager.server = new PortfolioSQLiteServer();
+            PortfolioManager.server = new PortfolioOleDbServer();
+            //PortfolioManager.server = new PortfolioSQLiteServer();
 			PortfolioManager.server.Open();
 			PortfolioManager.portfolios = PortfolioManager.server.Load();
 		}

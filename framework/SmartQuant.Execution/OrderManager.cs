@@ -466,8 +466,8 @@ namespace SmartQuant.Execution
 		private static OrderListTable fOrders = new OrderListTable();
 
         // Token: 0x0400001A RID: 26
-        //private static IOrderServer fServer = new OrderOleDbServer();
-        private static IOrderServer fServer = new OrderSQLiteServer();
+        private static IOrderServer fServer = new OrderOleDbServer();
+        //private static IOrderServer fServer = new OrderSQLiteServer();
 
         // Token: 0x0400001B RID: 27
         private static Hashtable fOCA = new Hashtable();

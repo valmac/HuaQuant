@@ -26,7 +26,7 @@ namespace SmartQuant.Execution
         // Token: 0x060000D4 RID: 212 RVA: 0x00004026 File Offset: 0x00003026
         public void Open(string database)
         {
-            this.connection = new SQLiteConnection(database);
+            this.connection = new SQLiteConnection("Data Source="+database);
             this.connection.Open();
             this.UpdateDatabase();
             this.LoadTypes();
@@ -50,7 +50,7 @@ namespace SmartQuant.Execution
                 sqliteCommand.ExecuteNonQuery();
                 sqliteCommand.Dispose();
                 sqliteCommand = this.connection.CreateCommand();
-                sqliteCommand.CommandText = "SELECT @@IDENTITY";
+                sqliteCommand.CommandText = "SELECT LAST_INSERT_ROWID()";
                 order.Id = (int)sqliteCommand.ExecuteScalar();
                 sqliteCommand.Dispose();
                 FIXSQLiteServer.SaveFIXGroup(this.connection, order as SingleOrder, "ORDER_FIELDS", order.Id);
@@ -70,7 +70,7 @@ namespace SmartQuant.Execution
                 sqliteCommand.ExecuteNonQuery();
                 sqliteCommand.Dispose();
                 sqliteCommand = this.connection.CreateCommand();
-                sqliteCommand.CommandText = "SELECT @@IDENTITY";
+                sqliteCommand.CommandText = "SELECT LAST_INSERT_ROWID()";
                 report.Id = (int)sqliteCommand.ExecuteScalar();
                 sqliteCommand.Dispose();
                 FIXSQLiteServer.SaveFIXGroup(this.connection, report, "REPORT_FIELDS", report.Id);
@@ -175,7 +175,7 @@ namespace SmartQuant.Execution
                 sqliteCommand.ExecuteNonQuery();
                 sqliteCommand.Dispose();
                 sqliteCommand = this.connection.CreateCommand();
-                sqliteCommand.CommandText = "SELECT @@IDENTITY";
+                sqliteCommand.CommandText = "SELECT LAST_INSERT_ROWID()";
                 int num = (int)sqliteCommand.ExecuteScalar();
                 sqliteCommand.Dispose();
                 this.orderTypes.Add(num, type);

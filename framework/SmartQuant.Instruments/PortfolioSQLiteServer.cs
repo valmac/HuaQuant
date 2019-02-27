@@ -12,7 +12,7 @@ namespace SmartQuant.Instruments
         // Token: 0x060002EB RID: 747 RVA: 0x00009307 File Offset: 0x00008307
         public void Open(string database)
         {
-            this.connection = new SQLiteConnection(database);
+            this.connection = new SQLiteConnection("Data Source=" + database);
             this.connection.Open();
             this.UpdateDatabase();
         }
@@ -161,7 +161,7 @@ namespace SmartQuant.Instruments
                     sqliteCommand.Parameters.Add("@Description_", DbType.String).Value = portfolio.Description;
                     sqliteCommand.Parameters.Add("@Persistent_", DbType.Boolean).Value = portfolio.Persistent;
                     sqliteCommand.ExecuteNonQuery();
-                    sqliteCommand = new SQLiteCommand("SELECT @@IDENTITY", this.connection);
+                    sqliteCommand = new SQLiteCommand("SELECT LAST_INSERT_ROWID()", this.connection);
                     portfolio.Id = (int)sqliteCommand.ExecuteScalar();
                 }
                 foreach (object obj in portfolio.Transactions)
@@ -182,7 +182,7 @@ namespace SmartQuant.Instruments
                     sqliteCommand.Parameters.Add("@Commission_  ", DbType.Double).Value = transaction.TransactionCost.Commission;
                     sqliteCommand.Parameters.Add("@CommType_    ", DbType.Byte).Value = FIXCommType.ToFIX(transaction.TransactionCost.CommType);
                     sqliteCommand.ExecuteNonQuery();
-                    sqliteCommand = new SQLiteCommand("SELECT @@IDENTITY", this.connection);
+                    sqliteCommand = new SQLiteCommand("SELECT LAST_INSERT_ROWID()", this.connection);
                     transaction.Id = (int)sqliteCommand.ExecuteScalar();
                 }
                 foreach (object obj2 in portfolio.Account.Transactions)
@@ -195,7 +195,7 @@ namespace SmartQuant.Instruments
                     sqliteCommand.Parameters.Add("@Value_", DbType.Double).Value = accountTransaction.Value;
                     sqliteCommand.Parameters.Add("@Text_", DbType.String).Value = accountTransaction.Text;
                     sqliteCommand.ExecuteNonQuery();
-                    sqliteCommand = new SQLiteCommand("SELECT @@IDENTITY", this.connection);
+                    sqliteCommand = new SQLiteCommand("SELECT LAST_INSERT_ROWID()", this.connection);
                     accountTransaction.Id = (int)sqliteCommand.ExecuteScalar();
                 }
             }
@@ -234,7 +234,7 @@ namespace SmartQuant.Instruments
                     sqliteCommand.Parameters.Add("@Persistent_", DbType.Boolean).Value = portfolio.Persistent;
                     sqliteCommand.ExecuteNonQuery();
                     sqliteCommand.Dispose();
-                    sqliteCommand = new SQLiteCommand("SELECT @@IDENTITY", this.connection);
+                    sqliteCommand = new SQLiteCommand("SELECT LAST_INSERT_ROWID()", this.connection);
                     portfolio.Id = (int)sqliteCommand.ExecuteScalar();
                     sqliteCommand.Dispose();
                     return;
@@ -283,7 +283,7 @@ namespace SmartQuant.Instruments
                     sqliteCommand.Parameters.Add("@CommType_", DbType.Byte).Value = FIXCommType.ToFIX(transaction.TransactionCost.CommType);
                     sqliteCommand.ExecuteNonQuery();
                     sqliteCommand = this.connection.CreateCommand();
-                    sqliteCommand.CommandText = "SELECT @@IDENTITY";
+                    sqliteCommand.CommandText = "SELECT LAST_INSERT_ROWID()";
                     transaction.Id = (int)sqliteCommand.ExecuteScalar();
                 }
                 catch (Exception innerException)
@@ -309,7 +309,7 @@ namespace SmartQuant.Instruments
                     sqliteCommand.Parameters.Add("@Text_", DbType.String).Value = transaction.Text;
                     sqliteCommand.ExecuteNonQuery();
                     sqliteCommand = this.connection.CreateCommand();
-                    sqliteCommand.CommandText = "SELECT @@IDENTITY";
+                    sqliteCommand.CommandText = "SELECT LAST_INSERT_ROWID()";
                     transaction.Id = (int)sqliteCommand.ExecuteScalar();
                 }
                 catch (Exception innerException)

@@ -17,7 +17,7 @@ namespace SmartQuant.Instruments
 
         public void Open(string dataBase)
         {
-            this.fConnection = new SQLiteConnection(dataBase);
+            this.fConnection = new SQLiteConnection("Data Source="+dataBase);
             this.fConnection.Open();
         }
 
@@ -151,7 +151,7 @@ namespace SmartQuant.Instruments
                 sqliteCommand.ExecuteNonQuery();
                 sqliteCommand.Dispose();
                 sqliteCommand = this.fConnection.CreateCommand();
-                sqliteCommand.CommandText = "SELECT @@IDENTITY";
+                sqliteCommand.CommandText = "SELECT LAST_INSERT_ROWID()";
                 instrument.Id = (int)sqliteCommand.ExecuteScalar();
                 sqliteCommand.Dispose();
             }
@@ -193,7 +193,7 @@ namespace SmartQuant.Instruments
                 sqliteCommand.Parameters.Add("@ParentID_", DbType.Int32).Value = instrument.Id;
                 sqliteCommand.Parameters.Add("@InstrumentID_", DbType.Int32).Value = leg.Instrument.Id;
                 sqliteCommand.ExecuteNonQuery();
-                sqliteCommand = new SQLiteCommand("SELECT @@IDENTITY", this.fConnection);
+                sqliteCommand = new SQLiteCommand("SELECT LAST_INSERT_ROWID()", this.fConnection);
                 leg.Id = (int)sqliteCommand.ExecuteScalar();
                 FIXSQLiteServer.SaveFIXGroup(this.fConnection, leg, "LEG_FIELDS", leg.Id);
             }
@@ -204,7 +204,7 @@ namespace SmartQuant.Instruments
                 sqliteCommand.Parameters.Add("@ParentID_", DbType.Int32).Value = instrument.Id;
                 sqliteCommand.Parameters.Add("@InstrumentID_", DbType.Int32).Value = underlying.Instrument.Id;
                 sqliteCommand.ExecuteNonQuery();
-                sqliteCommand = new SQLiteCommand("SELECT @@IDENTITY", this.fConnection);
+                sqliteCommand = new SQLiteCommand("SELECT LAST_INSERT_ROWID()", this.fConnection);
                 underlying.Id = (int)sqliteCommand.ExecuteScalar();
                 FIXSQLiteServer.SaveFIXGroup(this.fConnection, underlying, "UNDERLYING_FIELDS", underlying.Id);
             }
@@ -217,7 +217,7 @@ namespace SmartQuant.Instruments
                 sqliteCommand.ExecuteNonQuery();
                 sqliteCommand.Dispose();
                 sqliteCommand = this.fConnection.CreateCommand();
-                sqliteCommand.CommandText = "SELECT @@IDENTITY";
+                sqliteCommand.CommandText = "SELECT LAST_INSERT_ROWID()";
                 fixsecurityAltIDGroup.Id = (int)sqliteCommand.ExecuteScalar();
                 sqliteCommand.Dispose();
                 FIXSQLiteServer.SaveFIXGroup(this.fConnection, fixsecurityAltIDGroup, "ALT_ID_FIELDS", fixsecurityAltIDGroup.Id);
@@ -237,7 +237,7 @@ namespace SmartQuant.Instruments
                 sqliteCommand.ExecuteNonQuery();
                 sqliteCommand.Dispose();
                 sqliteCommand = this.fConnection.CreateCommand();
-                sqliteCommand.CommandText = "SELECT @@IDENTITY";
+                sqliteCommand.CommandText = "SELECT LAST_INSERT_ROWID()";
                 int num = (int)sqliteCommand.ExecuteScalar();
                 this.instrumentTypes.Add(num, type);
                 this.instrumentIds.Add(type, num);
@@ -258,7 +258,7 @@ namespace SmartQuant.Instruments
                 oleDbCommand.ExecuteNonQuery();
                 oleDbCommand.Dispose();
                 oleDbCommand = this.fConnection.CreateCommand();
-                oleDbCommand.CommandText = "SELECT @@IDENTITY";
+                oleDbCommand.CommandText = "SELECT LAST_INSERT_ROWID()";
                 int num = (int)oleDbCommand.ExecuteScalar();
                 this.pricerTypes.Add(num, type);
                 this.pricerIds.Add(type, num);
