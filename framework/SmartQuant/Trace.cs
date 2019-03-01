@@ -19,7 +19,7 @@ namespace SmartQuant
 		{
 			get
 			{
-				return Trace.Listeners;
+				return System.Diagnostics.Trace.Listeners;
 			}
 		}
 
@@ -64,11 +64,11 @@ namespace SmartQuant
 		{
 			get
 			{
-				return Trace.AutoFlush;
+				return System.Diagnostics.Trace.AutoFlush;
 			}
 			set
 			{
-				Trace.AutoFlush = value;
+                System.Diagnostics.Trace.AutoFlush = value;
 			}
 		}
 
