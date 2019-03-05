@@ -1,0 +1,450 @@
+2019/2/24 21:19:17 Initializing DataManager...
+2019/2/24 21:23:49 Initializing DataManager...
+2019/3/2 19:10:01 Initializing DataManager...
+2019/3/2 19:11:15 Initializing DataManager...
+2019/3/2 19:16:59 Initializing DataManager...
+2019/3/2 19:20:09 Initializing DataManager...
+2019/3/3 10:47:37 Initializing DataManager...
+2019/3/3 10:48:38 Initializing DataManager...
+2019/3/3 10:50:26 Initializing DataManager...
+2019/3/3 10:50:26 DateTime: 2019/3/3 10:50:26
+Level: Critical
+Source: Not defined.
+Description: “SmartQuant.Instruments.InstrumentManager”的类型初始值设定项引发异常。
+Details: System.TypeInitializationException: “SmartQuant.Instruments.InstrumentManager”的类型初始值设定项引发异常。 ---> System.InvalidOperationException: 未在本地计算机上注册“Microsoft.Jet.OLEDB.4.0”提供程序。
+   在 System.Data.OleDb.OleDbServicesWrapper.GetDataSource(OleDbConnectionString constr, DataSourceWrapper& datasrcWrapper)
+   在 System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   在 System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   在 System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   在 System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   在 System.Data.OleDb.OleDbConnection.Open()
+   在 SmartQuant.Instruments.InstrumentOleDbServer.Open(String database) 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentOleDbServer.cs:行号 24
+   在 SmartQuant.Instruments.InstrumentOleDbServer.Open() 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentOleDbServer.cs:行号 30
+   在 SmartQuant.Instruments.InstrumentManager..cctor() 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentManager.cs:行号 47
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SmartQuant.Instruments.InstrumentManager.get_Instruments()
+   在 ConsoleApp1.Program.Main(String[] args) 位置 D:\Source\HuaQuant\ConsoleApp1\Program.cs:行号 18
+2019/3/3 10:52:23 Initializing DataManager...
+2019/3/3 10:52:23 DateTime: 2019/3/3 10:52:23
+Level: Critical
+Source: Not defined.
+Description: “SmartQuant.Instruments.InstrumentManager”的类型初始值设定项引发异常。
+Details: System.TypeInitializationException: “SmartQuant.Instruments.InstrumentManager”的类型初始值设定项引发异常。 ---> System.DllNotFoundException: 无法加载 DLL“SQLite.Interop.dll”: 找不到指定的模块。 (异常来自 HRESULT:0x8007007E)。
+   在 System.Data.SQLite.UnsafeNativeMethods.sqlite3_config_none(SQLiteConfigOpsEnum op)
+   在 System.Data.SQLite.SQLite3.StaticIsInitialized()
+   在 System.Data.SQLite.SQLiteLog.Initialize(String className)
+   在 System.Data.SQLite.SQLiteConnection..ctor(String connectionString, Boolean parseViaFramework)
+   在 SmartQuant.Instruments.InstrumentSQLiteServer.Open(String dataBase) 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentSQLiteServer.cs:行号 20
+   在 SmartQuant.Instruments.InstrumentSQLiteServer.Open() 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentSQLiteServer.cs:行号 26
+   在 SmartQuant.Instruments.InstrumentManager..cctor() 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentManager.cs:行号 47
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SmartQuant.Instruments.InstrumentManager.get_Instruments()
+   在 ConsoleApp1.Program.Main(String[] args) 位置 D:\Source\HuaQuant\ConsoleApp1\Program.cs:行号 18
+2019/3/3 10:54:35 Initializing DataManager...
+2019/3/3 10:54:35 DateTime: 2019/3/3 10:54:35
+Level: Critical
+Source: Not defined.
+Description: “SmartQuant.Instruments.InstrumentManager”的类型初始值设定项引发异常。
+Details: System.TypeInitializationException: “SmartQuant.Instruments.InstrumentManager”的类型初始值设定项引发异常。 ---> System.DllNotFoundException: 无法加载 DLL“SQLite.Interop.dll”: 找不到指定的模块。 (异常来自 HRESULT:0x8007007E)。
+   在 System.Data.SQLite.UnsafeNativeMethods.sqlite3_config_none(SQLiteConfigOpsEnum op)
+   在 System.Data.SQLite.SQLite3.StaticIsInitialized()
+   在 System.Data.SQLite.SQLiteLog.Initialize(String className)
+   在 System.Data.SQLite.SQLiteConnection..ctor(String connectionString, Boolean parseViaFramework)
+   在 SmartQuant.Instruments.InstrumentSQLiteServer.Open(String dataBase) 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentSQLiteServer.cs:行号 20
+   在 SmartQuant.Instruments.InstrumentSQLiteServer.Open() 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentSQLiteServer.cs:行号 26
+   在 SmartQuant.Instruments.InstrumentManager..cctor() 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentManager.cs:行号 47
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SmartQuant.Instruments.InstrumentManager.get_Instruments()
+   在 ConsoleApp1.Program.Main(String[] args) 位置 D:\Source\HuaQuant\ConsoleApp1\Program.cs:行号 18
+2019/3/3 10:56:40 Initializing DataManager...
+2019/3/3 10:56:40 DateTime: 2019/3/3 10:56:40
+Level: Critical
+Source: Not defined.
+Description: “SmartQuant.Instruments.InstrumentManager”的类型初始值设定项引发异常。
+Details: System.TypeInitializationException: “SmartQuant.Instruments.InstrumentManager”的类型初始值设定项引发异常。 ---> System.FormatException: 字符串的长度只能为一个字符。
+   在 System.Char.Parse(String s)
+   在 SmartQuant.FIX.FIXCharField..ctor(Int32 tag, String value, Boolean invariantCulture) 位置 D:\Source\HuaQuant\framework\SmartQuant.FIX\FIXCharField.cs:行号 26
+   在 SmartQuant.FIX.FIXField.Field(FIXType type, Int32 tag, String value, Boolean invariantCulture) 位置 D:\Source\HuaQuant\framework\SmartQuant.FIX\FIXField.cs:行号 84
+   在 SmartQuant.FIX.FIXSQLiteServer.LoadFIXGroups(SQLiteConnection connection, FIXGroupList groups, String table) 位置 D:\Source\HuaQuant\framework\SmartQuant.FIX\FIXSQLiteServer.cs:行号 72
+   在 SmartQuant.Instruments.InstrumentSQLiteServer.Load() 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentSQLiteServer.cs:行号 83
+   在 SmartQuant.Instruments.InstrumentManager..cctor() 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentManager.cs:行号 49
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SmartQuant.Instruments.InstrumentManager.get_Instruments()
+   在 ConsoleApp1.Program.Main(String[] args) 位置 D:\Source\HuaQuant\ConsoleApp1\Program.cs:行号 18
+2019/3/3 10:57:34 Initializing DataManager...
+2019/3/3 10:57:34 DateTime: 2019/3/3 10:57:34
+Level: Critical
+Source: Not defined.
+Description: “SmartQuant.Instruments.InstrumentManager”的类型初始值设定项引发异常。
+Details: System.TypeInitializationException: “SmartQuant.Instruments.InstrumentManager”的类型初始值设定项引发异常。 ---> System.BadImageFormatException: 试图加载格式不正确的程序。 (异常来自 HRESULT:0x8007000B)
+   在 System.Data.SQLite.UnsafeNativeMethods.sqlite3_config_none(SQLiteConfigOpsEnum op)
+   在 System.Data.SQLite.SQLite3.StaticIsInitialized()
+   在 System.Data.SQLite.SQLiteLog.Initialize(String className)
+   在 System.Data.SQLite.SQLiteConnection..ctor(String connectionString, Boolean parseViaFramework)
+   在 System.Data.SQLite.SQLiteConnection..ctor(String connectionString)
+   在 SmartQuant.Instruments.InstrumentSQLiteServer.Open(String dataBase) 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentSQLiteServer.cs:行号 20
+   在 SmartQuant.Instruments.InstrumentSQLiteServer.Open() 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentSQLiteServer.cs:行号 26
+   在 SmartQuant.Instruments.InstrumentManager..cctor() 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentManager.cs:行号 47
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SmartQuant.Instruments.InstrumentManager.get_Instruments()
+   在 ConsoleApp1.Program.Main(String[] args) 位置 D:\Source\HuaQuant\ConsoleApp1\Program.cs:行号 18
+2019/3/3 10:57:55 Initializing DataManager...
+2019/3/3 10:57:56 DateTime: 2019/3/3 10:57:56
+Level: Critical
+Source: Not defined.
+Description: “SmartQuant.Instruments.InstrumentManager”的类型初始值设定项引发异常。
+Details: System.TypeInitializationException: “SmartQuant.Instruments.InstrumentManager”的类型初始值设定项引发异常。 ---> System.FormatException: 字符串的长度只能为一个字符。
+   在 System.Char.Parse(String s)
+   在 SmartQuant.FIX.FIXCharField..ctor(Int32 tag, String value, Boolean invariantCulture) 位置 D:\Source\HuaQuant\framework\SmartQuant.FIX\FIXCharField.cs:行号 26
+   在 SmartQuant.FIX.FIXField.Field(FIXType type, Int32 tag, String value, Boolean invariantCulture) 位置 D:\Source\HuaQuant\framework\SmartQuant.FIX\FIXField.cs:行号 84
+   在 SmartQuant.FIX.FIXSQLiteServer.LoadFIXGroups(SQLiteConnection connection, FIXGroupList groups, String table) 位置 D:\Source\HuaQuant\framework\SmartQuant.FIX\FIXSQLiteServer.cs:行号 72
+   在 SmartQuant.Instruments.InstrumentSQLiteServer.Load() 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentSQLiteServer.cs:行号 83
+   在 SmartQuant.Instruments.InstrumentManager..cctor() 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentManager.cs:行号 49
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SmartQuant.Instruments.InstrumentManager.get_Instruments()
+   在 ConsoleApp1.Program.Main(String[] args) 位置 D:\Source\HuaQuant\ConsoleApp1\Program.cs:行号 18
+2019/3/3 11:02:01 Initializing DataManager...
+2019/3/3 11:02:01 DateTime: 2019/3/3 11:02:01
+Level: Critical
+Source: Not defined.
+Description: “SmartQuant.Instruments.InstrumentManager”的类型初始值设定项引发异常。
+Details: System.TypeInitializationException: “SmartQuant.Instruments.InstrumentManager”的类型初始值设定项引发异常。 ---> System.FormatException: 字符串的长度只能为一个字符。
+   在 System.Char.Parse(String s)
+   在 SmartQuant.FIX.FIXCharField..ctor(Int32 tag, String value, Boolean invariantCulture) 位置 D:\Source\HuaQuant\framework\SmartQuant.FIX\FIXCharField.cs:行号 26
+   在 SmartQuant.FIX.FIXField.Field(FIXType type, Int32 tag, String value, Boolean invariantCulture) 位置 D:\Source\HuaQuant\framework\SmartQuant.FIX\FIXField.cs:行号 84
+   在 SmartQuant.FIX.FIXSQLiteServer.LoadFIXGroups(SQLiteConnection connection, FIXGroupList groups, String table) 位置 D:\Source\HuaQuant\framework\SmartQuant.FIX\FIXSQLiteServer.cs:行号 72
+   在 SmartQuant.Instruments.InstrumentSQLiteServer.Load() 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentSQLiteServer.cs:行号 83
+   在 SmartQuant.Instruments.InstrumentManager..cctor() 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentManager.cs:行号 49
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SmartQuant.Instruments.InstrumentManager.get_Instruments()
+   在 ConsoleApp1.Program.Main(String[] args) 位置 D:\Source\HuaQuant\ConsoleApp1\Program.cs:行号 18
+2019/3/3 11:15:58 Initializing DataManager...
+2019/3/3 11:15:58 DateTime: 2019/3/3 11:15:58
+Level: Critical
+Source: Not defined.
+Description: “SmartQuant.Instruments.InstrumentManager”的类型初始值设定项引发异常。
+Details: System.TypeInitializationException: “SmartQuant.Instruments.InstrumentManager”的类型初始值设定项引发异常。 ---> System.FormatException: 字符串的长度只能为一个字符。
+   在 System.Char.Parse(String s)
+   在 SmartQuant.FIX.FIXCharField..ctor(Int32 tag, String value, Boolean invariantCulture) 位置 D:\Source\HuaQuant\framework\SmartQuant.FIX\FIXCharField.cs:行号 26
+   在 SmartQuant.FIX.FIXField.Field(FIXType type, Int32 tag, String value, Boolean invariantCulture) 位置 D:\Source\HuaQuant\framework\SmartQuant.FIX\FIXField.cs:行号 84
+   在 SmartQuant.FIX.FIXSQLiteServer.LoadFIXGroups(SQLiteConnection connection, FIXGroupList groups, String table) 位置 D:\Source\HuaQuant\framework\SmartQuant.FIX\FIXSQLiteServer.cs:行号 72
+   在 SmartQuant.Instruments.InstrumentSQLiteServer.Load() 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentSQLiteServer.cs:行号 83
+   在 SmartQuant.Instruments.InstrumentManager..cctor() 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentManager.cs:行号 49
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SmartQuant.Instruments.InstrumentManager.get_Instruments()
+   在 ConsoleApp1.Program.Main(String[] args) 位置 D:\Source\HuaQuant\ConsoleApp1\Program.cs:行号 18
+2019/3/3 11:17:26 Initializing DataManager...
+2019/3/3 11:17:27 DateTime: 2019/3/3 11:17:27
+Level: Critical
+Source: Not defined.
+Description: “SmartQuant.Instruments.InstrumentManager”的类型初始值设定项引发异常。
+Details: System.TypeInitializationException: “SmartQuant.Instruments.InstrumentManager”的类型初始值设定项引发异常。 ---> System.FormatException: 字符串的长度只能为一个字符。
+   在 System.Char.Parse(String s)
+   在 SmartQuant.FIX.FIXCharField..ctor(Int32 tag, String value, Boolean invariantCulture) 位置 D:\Source\HuaQuant\framework\SmartQuant.FIX\FIXCharField.cs:行号 26
+   在 SmartQuant.FIX.FIXField.Field(FIXType type, Int32 tag, String value, Boolean invariantCulture) 位置 D:\Source\HuaQuant\framework\SmartQuant.FIX\FIXField.cs:行号 84
+   在 SmartQuant.FIX.FIXSQLiteServer.LoadFIXGroups(SQLiteConnection connection, FIXGroupList groups, String table) 位置 D:\Source\HuaQuant\framework\SmartQuant.FIX\FIXSQLiteServer.cs:行号 72
+   在 SmartQuant.Instruments.InstrumentSQLiteServer.Load() 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentSQLiteServer.cs:行号 83
+   在 SmartQuant.Instruments.InstrumentManager..cctor() 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentManager.cs:行号 49
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SmartQuant.Instruments.InstrumentManager.get_Instruments()
+   在 ConsoleApp1.Program.Main(String[] args) 位置 D:\Source\HuaQuant\ConsoleApp1\Program.cs:行号 18
+2019/3/3 11:18:22 Initializing DataManager...
+2019/3/3 11:18:22 DateTime: 2019/3/3 11:18:22
+Level: Critical
+Source: Not defined.
+Description: “SmartQuant.Instruments.InstrumentManager”的类型初始值设定项引发异常。
+Details: System.TypeInitializationException: “SmartQuant.Instruments.InstrumentManager”的类型初始值设定项引发异常。 ---> System.FormatException: 字符串的长度只能为一个字符。
+   在 System.Char.Parse(String s)
+   在 SmartQuant.FIX.FIXCharField..ctor(Int32 tag, String value, Boolean invariantCulture) 位置 D:\Source\HuaQuant\framework\SmartQuant.FIX\FIXCharField.cs:行号 26
+   在 SmartQuant.FIX.FIXField.Field(FIXType type, Int32 tag, String value, Boolean invariantCulture) 位置 D:\Source\HuaQuant\framework\SmartQuant.FIX\FIXField.cs:行号 84
+   在 SmartQuant.FIX.FIXSQLiteServer.LoadFIXGroups(SQLiteConnection connection, FIXGroupList groups, String table) 位置 D:\Source\HuaQuant\framework\SmartQuant.FIX\FIXSQLiteServer.cs:行号 73
+   在 SmartQuant.Instruments.InstrumentSQLiteServer.Load() 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentSQLiteServer.cs:行号 83
+   在 SmartQuant.Instruments.InstrumentManager..cctor() 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentManager.cs:行号 49
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SmartQuant.Instruments.InstrumentManager.get_Instruments()
+   在 ConsoleApp1.Program.Main(String[] args) 位置 D:\Source\HuaQuant\ConsoleApp1\Program.cs:行号 18
+2019/3/3 11:19:51 Initializing DataManager...
+2019/3/3 11:19:51 DateTime: 2019/3/3 11:19:51
+Level: Critical
+Source: Not defined.
+Description: “SmartQuant.Instruments.InstrumentManager”的类型初始值设定项引发异常。
+Details: System.TypeInitializationException: “SmartQuant.Instruments.InstrumentManager”的类型初始值设定项引发异常。 ---> System.FormatException: 字符串的长度只能为一个字符。
+   在 System.Char.Parse(String s)
+   在 SmartQuant.FIX.FIXCharField..ctor(Int32 tag, String value, Boolean invariantCulture) 位置 D:\Source\HuaQuant\framework\SmartQuant.FIX\FIXCharField.cs:行号 26
+   在 SmartQuant.FIX.FIXField.Field(FIXType type, Int32 tag, String value, Boolean invariantCulture) 位置 D:\Source\HuaQuant\framework\SmartQuant.FIX\FIXField.cs:行号 84
+   在 SmartQuant.FIX.FIXSQLiteServer.LoadFIXGroups(SQLiteConnection connection, FIXGroupList groups, String table) 位置 D:\Source\HuaQuant\framework\SmartQuant.FIX\FIXSQLiteServer.cs:行号 73
+   在 SmartQuant.Instruments.InstrumentSQLiteServer.Load() 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentSQLiteServer.cs:行号 83
+   在 SmartQuant.Instruments.InstrumentManager..cctor() 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentManager.cs:行号 49
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SmartQuant.Instruments.InstrumentManager.get_Instruments()
+   在 ConsoleApp1.Program.Main(String[] args) 位置 D:\Source\HuaQuant\ConsoleApp1\Program.cs:行号 18
+2019/3/3 11:24:32 Initializing DataManager...
+2019/3/3 11:26:11 Initializing DataManager...
+2019/3/3 11:26:52 Initializing DataManager...
+2019/3/3 11:27:18 Initializing DataManager...
+2019/3/3 11:28:50 Initializing DataManager...
+2019/3/3 11:29:39 Initializing DataManager...
+2019/3/3 11:29:39 DateTime: 2019/3/3 11:29:39
+Level: Critical
+Source: Not defined.
+Description: “SmartQuant.Instruments.InstrumentManager”的类型初始值设定项引发异常。
+Details: System.TypeInitializationException: “SmartQuant.Instruments.InstrumentManager”的类型初始值设定项引发异常。 ---> System.FormatException: 字符串的长度只能为一个字符。
+   在 System.Char.Parse(String s)
+   在 SmartQuant.FIX.FIXCharField..ctor(Int32 tag, String value, Boolean invariantCulture) 位置 D:\Source\HuaQuant\framework\SmartQuant.FIX\FIXCharField.cs:行号 26
+   在 SmartQuant.FIX.FIXField.Field(FIXType type, Int32 tag, String value, Boolean invariantCulture) 位置 D:\Source\HuaQuant\framework\SmartQuant.FIX\FIXField.cs:行号 84
+   在 SmartQuant.FIX.FIXSQLiteServer.LoadFIXGroups(SQLiteConnection connection, FIXGroupList groups, String table) 位置 D:\Source\HuaQuant\framework\SmartQuant.FIX\FIXSQLiteServer.cs:行号 73
+   在 SmartQuant.Instruments.InstrumentSQLiteServer.Load() 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentSQLiteServer.cs:行号 83
+   在 SmartQuant.Instruments.InstrumentManager..cctor() 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentManager.cs:行号 49
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SmartQuant.Instruments.InstrumentManager.get_Instruments()
+   在 ConsoleApp1.Program.Main(String[] args) 位置 D:\Source\HuaQuant\ConsoleApp1\Program.cs:行号 18
+2019/3/3 11:31:02 Initializing DataManager...
+2019/3/3 11:31:02 DateTime: 2019/3/3 11:31:02
+Level: Critical
+Source: Not defined.
+Description: “SmartQuant.Instruments.InstrumentManager”的类型初始值设定项引发异常。
+Details: System.TypeInitializationException: “SmartQuant.Instruments.InstrumentManager”的类型初始值设定项引发异常。 ---> System.FormatException: 字符串的长度只能为一个字符。
+   在 System.Char.Parse(String s)
+   在 SmartQuant.FIX.FIXCharField..ctor(Int32 tag, String value, Boolean invariantCulture) 位置 D:\Source\HuaQuant\framework\SmartQuant.FIX\FIXCharField.cs:行号 26
+   在 SmartQuant.FIX.FIXField.Field(FIXType type, Int32 tag, String value, Boolean invariantCulture) 位置 D:\Source\HuaQuant\framework\SmartQuant.FIX\FIXField.cs:行号 84
+   在 SmartQuant.FIX.FIXSQLiteServer.LoadFIXGroups(SQLiteConnection connection, FIXGroupList groups, String table) 位置 D:\Source\HuaQuant\framework\SmartQuant.FIX\FIXSQLiteServer.cs:行号 73
+   在 SmartQuant.Instruments.InstrumentSQLiteServer.Load() 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentSQLiteServer.cs:行号 83
+   在 SmartQuant.Instruments.InstrumentManager..cctor() 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentManager.cs:行号 49
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SmartQuant.Instruments.InstrumentManager.get_Instruments()
+   在 ConsoleApp1.Program.Main(String[] args) 位置 D:\Source\HuaQuant\ConsoleApp1\Program.cs:行号 18
+2019/3/3 11:31:46 Initializing DataManager...
+2019/3/3 11:35:24 Initializing DataManager...
+2019/3/3 11:35:25 DateTime: 2019/3/3 11:35:25
+Level: Critical
+Source: Not defined.
+Description: “SmartQuant.Instruments.InstrumentManager”的类型初始值设定项引发异常。
+Details: System.TypeInitializationException: “SmartQuant.Instruments.InstrumentManager”的类型初始值设定项引发异常。 ---> System.FormatException: 字符串的长度只能为一个字符。
+   在 System.Char.Parse(String s)
+   在 SmartQuant.FIX.FIXCharField..ctor(Int32 tag, String value, Boolean invariantCulture) 位置 D:\Source\HuaQuant\framework\SmartQuant.FIX\FIXCharField.cs:行号 26
+   在 SmartQuant.FIX.FIXField.Field(FIXType type, Int32 tag, String value, Boolean invariantCulture) 位置 D:\Source\HuaQuant\framework\SmartQuant.FIX\FIXField.cs:行号 84
+   在 SmartQuant.FIX.FIXSQLiteServer.LoadFIXGroups(SQLiteConnection connection, FIXGroupList groups, String table) 位置 D:\Source\HuaQuant\framework\SmartQuant.FIX\FIXSQLiteServer.cs:行号 73
+   在 SmartQuant.Instruments.InstrumentSQLiteServer.Load() 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentSQLiteServer.cs:行号 83
+   在 SmartQuant.Instruments.InstrumentManager..cctor() 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentManager.cs:行号 49
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SmartQuant.Instruments.InstrumentManager.get_Instruments()
+   在 ConsoleApp1.Program.Main(String[] args) 位置 D:\Source\HuaQuant\ConsoleApp1\Program.cs:行号 18
+2019/3/3 11:36:50 Initializing DataManager...
+2019/3/3 11:36:50 DateTime: 2019/3/3 11:36:50
+Level: Critical
+Source: Not defined.
+Description: “SmartQuant.Instruments.InstrumentManager”的类型初始值设定项引发异常。
+Details: System.TypeInitializationException: “SmartQuant.Instruments.InstrumentManager”的类型初始值设定项引发异常。 ---> System.FormatException: 字符串的长度只能为一个字符。
+   在 System.Char.Parse(String s)
+   在 SmartQuant.FIX.FIXCharField..ctor(Int32 tag, String value, Boolean invariantCulture) 位置 D:\Source\HuaQuant\framework\SmartQuant.FIX\FIXCharField.cs:行号 26
+   在 SmartQuant.FIX.FIXField.Field(FIXType type, Int32 tag, String value, Boolean invariantCulture) 位置 D:\Source\HuaQuant\framework\SmartQuant.FIX\FIXField.cs:行号 84
+   在 SmartQuant.FIX.FIXSQLiteServer.LoadFIXGroups(SQLiteConnection connection, FIXGroupList groups, String table) 位置 D:\Source\HuaQuant\framework\SmartQuant.FIX\FIXSQLiteServer.cs:行号 73
+   在 SmartQuant.Instruments.InstrumentSQLiteServer.Load() 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentSQLiteServer.cs:行号 83
+   在 SmartQuant.Instruments.InstrumentManager..cctor() 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentManager.cs:行号 49
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SmartQuant.Instruments.InstrumentManager.get_Instruments()
+   在 ConsoleApp1.Program.Main(String[] args) 位置 D:\Source\HuaQuant\ConsoleApp1\Program.cs:行号 18
+2019/3/3 11:38:50 Initializing DataManager...
+2019/3/3 11:39:21 Initializing DataManager...
+2019/3/3 11:45:56 Initializing DataManager...
+2019/3/3 11:46:26 Initializing DataManager...
+2019/3/3 11:46:46 Initializing DataManager...
+2019/3/3 11:49:31 Initializing DataManager...
+2019/3/3 11:49:32 DateTime: 2019/3/3 11:49:32
+Level: Critical
+Source: Not defined.
+Description: 指定的转换无效。
+Details: System.InvalidCastException: 指定的转换无效。
+   在 SmartQuant.Instruments.InstrumentSQLiteServer.Save(Instrument instrument) 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentSQLiteServer.cs:行号 155
+   在 SmartQuant.Instruments.InstrumentManager.Save(Instrument instrument) 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentManager.cs:行号 117
+   在 SmartQuant.Instruments.Instrument.Save() 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\Instrument.cs:行号 447
+   在 ConsoleApp1.Program.Main(String[] args) 位置 D:\Source\HuaQuant\ConsoleApp1\Program.cs:行号 35
+2019/3/3 11:50:45 Initializing DataManager...
+2019/3/3 11:50:46 DateTime: 2019/3/3 11:50:46
+Level: Critical
+Source: Not defined.
+Description: Can not add instrument that is already present in the list : Test.000001
+Details: System.ApplicationException: Can not add instrument that is already present in the list : Test.000001
+   在 SmartQuant.Instruments.InstrumentList.Add(Instrument instrument) 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentList.cs:行号 58
+   在 SmartQuant.Instruments.InstrumentManager.Add(Instrument instrument) 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentManager.cs:行号 107
+   在 SmartQuant.Instruments.Instrument..ctor(String symbol, String securityType) 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\Instrument.cs:行号 373
+   在 ConsoleApp1.Program.Main(String[] args) 位置 D:\Source\HuaQuant\ConsoleApp1\Program.cs:行号 31
+2019/3/3 11:51:33 Initializing DataManager...
+2019/3/3 11:51:34 DateTime: 2019/3/3 11:51:34
+Level: Critical
+Source: Not defined.
+Description: Can not add instrument that is already present in the list : Test.000001
+Details: System.ApplicationException: Can not add instrument that is already present in the list : Test.000001
+   在 SmartQuant.Instruments.InstrumentList.Add(Instrument instrument) 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentList.cs:行号 58
+   在 SmartQuant.Instruments.InstrumentManager.Add(Instrument instrument) 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentManager.cs:行号 107
+   在 SmartQuant.Instruments.Instrument..ctor(String symbol, String securityType) 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\Instrument.cs:行号 373
+   在 ConsoleApp1.Program.Main(String[] args) 位置 D:\Source\HuaQuant\ConsoleApp1\Program.cs:行号 31
+2019/3/3 11:52:51 Initializing DataManager...
+2019/3/3 11:52:52 DateTime: 2019/3/3 11:52:52
+Level: Critical
+Source: Not defined.
+Description: 集合已修改；可能无法执行枚举操作。
+Details: System.InvalidOperationException: 集合已修改；可能无法执行枚举操作。
+   在 System.Collections.SortedList.SortedListEnumerator.MoveNext()
+   在 ConsoleApp1.Program.Main(String[] args) 位置 D:\Source\HuaQuant\ConsoleApp1\Program.cs:行号 18
+2019/3/3 11:55:18 Initializing DataManager...
+2019/3/3 11:55:19 DateTime: 2019/3/3 11:55:19
+Level: Critical
+Source: Not defined.
+Description: 指定的转换无效。
+Details: System.InvalidCastException: 指定的转换无效。
+   在 SmartQuant.Instruments.InstrumentSQLiteServer.Save(Instrument instrument) 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentSQLiteServer.cs:行号 155
+   在 SmartQuant.Instruments.InstrumentManager.Save(Instrument instrument) 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentManager.cs:行号 117
+   在 SmartQuant.Instruments.Instrument.Save() 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\Instrument.cs:行号 447
+   在 ConsoleApp1.Program.Main(String[] args) 位置 D:\Source\HuaQuant\ConsoleApp1\Program.cs:行号 41
+2019/3/3 11:58:16 Initializing DataManager...
+2019/3/3 11:58:17 DateTime: 2019/3/3 11:58:17
+Level: Critical
+Source: Not defined.
+Description: Can not add instrument that is already present in the list : 
+Details: System.ApplicationException: Can not add instrument that is already present in the list : 
+   在 SmartQuant.Instruments.InstrumentList.Add(Instrument instrument) 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentList.cs:行号 58
+   在 SmartQuant.Instruments.InstrumentManager.Add(Instrument instrument) 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentManager.cs:行号 107
+   在 SmartQuant.Instruments.Instrument..ctor(String symbol, String securityType) 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\Instrument.cs:行号 373
+   在 ConsoleApp1.Program.Main(String[] args) 位置 D:\Source\HuaQuant\ConsoleApp1\Program.cs:行号 37
+2019/3/3 11:59:43 Initializing DataManager...
+2019/3/3 11:59:45 DateTime: 2019/3/3 11:59:45
+Level: Critical
+Source: Not defined.
+Description: 指定的转换无效。
+Details: System.InvalidCastException: 指定的转换无效。
+   在 SmartQuant.Instruments.InstrumentSQLiteServer.Save(Instrument instrument) 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentSQLiteServer.cs:行号 156
+   在 SmartQuant.Instruments.InstrumentManager.Save(Instrument instrument) 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentManager.cs:行号 117
+   在 SmartQuant.Instruments.Instrument.Save() 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\Instrument.cs:行号 447
+   在 ConsoleApp1.Program.Main(String[] args) 位置 D:\Source\HuaQuant\ConsoleApp1\Program.cs:行号 41
+2019/3/3 12:01:10 Initializing DataManager...
+2019/3/3 12:04:14 Initializing DataManager...
+2019/3/3 12:04:40 Initializing DataManager...
+2019/3/3 12:04:59 Initializing DataManager...
+2019/3/3 20:33:38 Initializing DataManager...
+2019/3/3 20:33:45 Initializing DataManager...
+2019/3/3 20:33:45 DateTime: 2019/3/3 20:33:45
+Level: Critical
+Source: Not defined.
+Description: “SmartQuant.Instruments.InstrumentManager”的类型初始值设定项引发异常。
+Details: System.TypeInitializationException: “SmartQuant.Instruments.InstrumentManager”的类型初始值设定项引发异常。 ---> System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 SmartQuant.FIX.FIXSQLiteServer.LoadFIXGroups(SQLiteConnection connection, FIXGroupList groups, String table) 位置 D:\Source\HuaQuant\framework\SmartQuant.FIX\FIXSQLiteServer.cs:行号 74
+   在 SmartQuant.Instruments.InstrumentSQLiteServer.Load() 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentSQLiteServer.cs:行号 83
+   在 SmartQuant.Instruments.InstrumentManager..cctor() 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentManager.cs:行号 49
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SmartQuant.Instruments.InstrumentManager.get_Instruments()
+   在 ConsoleApp1.Program.Main(String[] args) 位置 D:\Source\HuaQuant\ConsoleApp1\Program.cs:行号 18
+2019/3/3 20:36:45 Initializing DataManager...
+2019/3/3 20:36:57 Initializing DataManager...
+2019/3/3 20:37:30 Initializing DataManager...
+2019/3/3 20:39:11 Initializing DataManager...
+2019/3/3 20:40:46 Initializing DataManager...
+2019/3/3 20:41:13 Initializing DataManager...
+2019/3/3 20:48:19 Initializing DataManager...
+2019/3/3 20:48:34 Initializing DataManager...
+2019/3/3 20:51:57 Initializing DataManager...
+2019/3/3 20:54:03 Initializing DataManager...
+2019/3/3 20:59:09 Initializing DataManager...
+SQLite error (1): no such table: INSTRUMENT_TYPES
+2019/3/3 20:59:10 DateTime: 2019/3/3 20:59:10
+Level: Critical
+Source: Not defined.
+Description: “SmartQuant.Instruments.InstrumentManager”的类型初始值设定项引发异常。
+Details: System.TypeInitializationException: “SmartQuant.Instruments.InstrumentManager”的类型初始值设定项引发异常。 ---> System.Data.SQLite.SQLiteException: SQL logic error
+no such table: INSTRUMENT_TYPES
+   在 System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   在 System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   在 System.Data.SQLite.SQLiteCommand.GetStatement(Int32 index)
+   在 System.Data.SQLite.SQLiteDataReader.NextResult()
+   在 System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteReader()
+   在 SmartQuant.Instruments.InstrumentSQLiteServer.Load() 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentSQLiteServer.cs:行号 42
+   在 SmartQuant.Instruments.InstrumentManager..cctor() 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentManager.cs:行号 49
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SmartQuant.Instruments.InstrumentManager.get_Instruments()
+   在 ConsoleApp1.Program.Main(String[] args) 位置 D:\Source\HuaQuant\ConsoleApp1\Program.cs:行号 18
+2019/3/3 21:00:07 Initializing DataManager...
+2019/3/3 21:02:19 Initializing DataManager...
+SQLite error (1): no such table: INSTRUMENT_TYPES
+2019/3/3 21:02:19 DateTime: 2019/3/3 21:02:19
+Level: Critical
+Source: Not defined.
+Description: “SmartQuant.Instruments.InstrumentManager”的类型初始值设定项引发异常。
+Details: System.TypeInitializationException: “SmartQuant.Instruments.InstrumentManager”的类型初始值设定项引发异常。 ---> System.Data.SQLite.SQLiteException: SQL logic error
+no such table: INSTRUMENT_TYPES
+   在 System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String& strRemain)
+   在 System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   在 System.Data.SQLite.SQLiteCommand.GetStatement(Int32 index)
+   在 System.Data.SQLite.SQLiteDataReader.NextResult()
+   在 System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteReader()
+   在 SmartQuant.Instruments.InstrumentSQLiteServer.Load() 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentSQLiteServer.cs:行号 42
+   在 SmartQuant.Instruments.InstrumentManager..cctor() 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentManager.cs:行号 49
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SmartQuant.Instruments.InstrumentManager.get_Instruments()
+   在 ConsoleApp1.Program.Main(String[] args) 位置 D:\Source\HuaQuant\ConsoleApp1\Program.cs:行号 18
+2019/3/3 21:04:21 Initializing DataManager...
+2019/3/3 21:04:35 Initializing DataManager...
+2019/3/3 21:05:04 Initializing DataManager...
+2019/3/3 21:35:44 Initializing DataManager...
+2019/3/3 21:35:50 Initializing DataManager...
+2019/3/3 21:37:28 Initializing DataManager...
+2019/3/3 21:37:28 DateTime: 2019/3/3 21:37:28
+Level: Critical
+Source: Not defined.
+Description: “SmartQuant.Instruments.InstrumentManager”的类型初始值设定项引发异常。
+Details: System.TypeInitializationException: “SmartQuant.Instruments.InstrumentManager”的类型初始值设定项引发异常。 ---> System.BadImageFormatException: 试图加载格式不正确的程序。 (异常来自 HRESULT:0x8007000B)
+   在 System.Data.SQLite.UnsafeNativeMethods.sqlite3_config_none(SQLiteConfigOpsEnum op)
+   在 System.Data.SQLite.SQLite3.StaticIsInitialized()
+   在 System.Data.SQLite.SQLiteLog.Initialize(String className)
+   在 System.Data.SQLite.SQLiteConnection..ctor(String connectionString, Boolean parseViaFramework)
+   在 SmartQuant.Instruments.InstrumentSQLiteServer.Open(String dataBase) 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentSQLiteServer.cs:行号 20
+   在 SmartQuant.Instruments.InstrumentSQLiteServer.Open() 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentSQLiteServer.cs:行号 26
+   在 SmartQuant.Instruments.InstrumentManager..cctor() 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentManager.cs:行号 47
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SmartQuant.Instruments.InstrumentManager.get_Instruments()
+   在 ConsoleApp1.Program.Main(String[] args) 位置 D:\Source\HuaQuant\ConsoleApp1\Program.cs:行号 18
+2019/3/3 21:38:10 Initializing DataManager...
+2019/3/3 21:38:41 Initializing DataManager...
+2019/3/3 21:38:50 Initializing DataManager...
+2019/3/3 21:38:59 Initializing DataManager...
+2019/3/4 23:18:16 Initializing DataManager...
+2019/3/4 23:22:36 Initializing DataManager...
+2019/3/4 23:22:36 DateTime: 2019/3/4 23:22:36
+Level: Critical
+Source: Not defined.
+Description: “SmartQuant.Instruments.InstrumentManager”的类型初始值设定项引发异常。
+Details: System.TypeInitializationException: “SmartQuant.Instruments.InstrumentManager”的类型初始值设定项引发异常。 ---> System.DllNotFoundException: 无法加载 DLL“SQLite.Interop.dll”: 找不到指定的模块。 (异常来自 HRESULT:0x8007007E)。
+   在 System.Data.SQLite.UnsafeNativeMethods.sqlite3_config_none(SQLiteConfigOpsEnum op)
+   在 System.Data.SQLite.SQLite3.StaticIsInitialized()
+   在 System.Data.SQLite.SQLiteLog.Initialize(String className)
+   在 System.Data.SQLite.SQLiteConnection..ctor(String connectionString, Boolean parseViaFramework)
+   在 System.Data.SQLite.SQLiteConnection..ctor(String connectionString)
+   在 SmartQuant.Instruments.InstrumentSQLiteServer.Open(String dataBase) 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentSQLiteServer.cs:行号 20
+   在 SmartQuant.Instruments.InstrumentSQLiteServer.Open() 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentSQLiteServer.cs:行号 26
+   在 SmartQuant.Instruments.InstrumentManager..cctor() 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentManager.cs:行号 47
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SmartQuant.Instruments.InstrumentManager.get_Instruments()
+   在 ConsoleTest.Program.Main(String[] args) 位置 D:\Source\HuaQuant\ConsoleTest\Program.cs:行号 22
+2019/3/4 23:23:51 Initializing DataManager...
+2019/3/4 23:23:51 DateTime: 2019/3/4 23:23:51
+Level: Critical
+Source: Not defined.
+Description: “SmartQuant.Instruments.InstrumentManager”的类型初始值设定项引发异常。
+Details: System.TypeInitializationException: “SmartQuant.Instruments.InstrumentManager”的类型初始值设定项引发异常。 ---> System.BadImageFormatException: 试图加载格式不正确的程序。 (异常来自 HRESULT:0x8007000B)
+   在 System.Data.SQLite.UnsafeNativeMethods.sqlite3_config_none(SQLiteConfigOpsEnum op)
+   在 System.Data.SQLite.SQLite3.StaticIsInitialized()
+   在 System.Data.SQLite.SQLiteLog.Initialize(String className)
+   在 System.Data.SQLite.SQLiteConnection..ctor(String connectionString, Boolean parseViaFramework)
+   在 System.Data.SQLite.SQLiteConnection..ctor(String connectionString)
+   在 SmartQuant.Instruments.InstrumentSQLiteServer.Open(String dataBase) 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentSQLiteServer.cs:行号 20
+   在 SmartQuant.Instruments.InstrumentSQLiteServer.Open() 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentSQLiteServer.cs:行号 26
+   在 SmartQuant.Instruments.InstrumentManager..cctor() 位置 D:\Source\HuaQuant\framework\SmartQuant.Instruments\InstrumentManager.cs:行号 47
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 SmartQuant.Instruments.InstrumentManager.get_Instruments()
+   在 ConsoleTest.Program.Main(String[] args) 位置 D:\Source\HuaQuant\ConsoleTest\Program.cs:行号 22
+2019/3/4 23:24:17 Initializing DataManager...

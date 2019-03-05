@@ -25,43 +25,6 @@ namespace SmartQuant
 			{
 				return;
 			}
-			switch (Framework.Installation.Edition)
-			{
-			case Edition.Demo:
-				if (Framework.Installation.TimeChanged || Framework.Installation.DemoExpired)
-				{
-					if (Trace.IsLevelEnabled(TraceLevel.Info))
-					{
-						Trace.WriteLine("Your demo version has expired.");
-					}
-					if (Environment.UserInteractive)
-					{
-						MessageBox.Show("Your demo version of QuantDeveloper has expired. Please contact us at sales@smartquant.com to discuss QuantDeveloper licensing issues.", "Expiration", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-					}
-					Environment.Exit(-1);
-					return;
-				}
-				break;
-			case Edition.Research:
-			case Edition.Professional:
-				if (!Framework.Installation.RuntimeEnabled)
-				{
-					if (Trace.IsLevelEnabled(TraceLevel.Info))
-					{
-						Trace.WriteLine("You cannot use runtime libraries.");
-					}
-					if (Environment.UserInteractive)
-					{
-						MessageBox.Show("You cannot use runtime libraries.", "Runtime", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-					}
-					Environment.Exit(-1);
-				}
-				break;
-			case Edition.Enterprise:
-				break;
-			default:
-				return;
-			}
 		}
 
 		// Token: 0x1700004D RID: 77
@@ -185,7 +148,7 @@ namespace SmartQuant
 		}
 
 		// Token: 0x040000E3 RID: 227
-		private const string EXPIRATION_MESSAGE = "Your demo version of QuantDeveloper has expired. Please contact us at sales@smartquant.com to discuss QuantDeveloper licensing issues.";
+		//private const string EXPIRATION_MESSAGE = "Your demo version of QuantDeveloper has expired. Please contact us at sales@smartquant.com to discuss QuantDeveloper licensing issues.";
 
 		// Token: 0x040000E4 RID: 228
 		private static Configuration configuration;

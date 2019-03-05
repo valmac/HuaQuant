@@ -17,7 +17,7 @@ namespace SmartQuant.Instruments
 
         public void Open(string dataBase)
         {
-            this.fConnection = new SQLiteConnection("Data Source="+dataBase);
+            this.fConnection = new SQLiteConnection("Data Source="+dataBase+ ";foreign keys=true;");
             this.fConnection.Open();
         }
 
@@ -152,7 +152,7 @@ namespace SmartQuant.Instruments
                 sqliteCommand.Dispose();
                 sqliteCommand = this.fConnection.CreateCommand();
                 sqliteCommand.CommandText = "SELECT LAST_INSERT_ROWID()";
-                instrument.Id = (int)sqliteCommand.ExecuteScalar();
+                instrument.Id = Convert.ToInt32(sqliteCommand.ExecuteScalar());
                 sqliteCommand.Dispose();
             }
             else
@@ -194,7 +194,7 @@ namespace SmartQuant.Instruments
                 sqliteCommand.Parameters.Add("@InstrumentID_", DbType.Int32).Value = leg.Instrument.Id;
                 sqliteCommand.ExecuteNonQuery();
                 sqliteCommand = new SQLiteCommand("SELECT LAST_INSERT_ROWID()", this.fConnection);
-                leg.Id = (int)sqliteCommand.ExecuteScalar();
+                leg.Id = Convert.ToInt32(sqliteCommand.ExecuteScalar());
                 FIXSQLiteServer.SaveFIXGroup(this.fConnection, leg, "LEG_FIELDS", leg.Id);
             }
             foreach (object obj2 in instrument.Underlyings)
@@ -205,7 +205,7 @@ namespace SmartQuant.Instruments
                 sqliteCommand.Parameters.Add("@InstrumentID_", DbType.Int32).Value = underlying.Instrument.Id;
                 sqliteCommand.ExecuteNonQuery();
                 sqliteCommand = new SQLiteCommand("SELECT LAST_INSERT_ROWID()", this.fConnection);
-                underlying.Id = (int)sqliteCommand.ExecuteScalar();
+                underlying.Id = Convert.ToInt32(sqliteCommand.ExecuteScalar());
                 FIXSQLiteServer.SaveFIXGroup(this.fConnection, underlying, "UNDERLYING_FIELDS", underlying.Id);
             }
             foreach (object obj3 in instrument.SecurityAltIDGroup)
@@ -218,7 +218,7 @@ namespace SmartQuant.Instruments
                 sqliteCommand.Dispose();
                 sqliteCommand = this.fConnection.CreateCommand();
                 sqliteCommand.CommandText = "SELECT LAST_INSERT_ROWID()";
-                fixsecurityAltIDGroup.Id = (int)sqliteCommand.ExecuteScalar();
+                fixsecurityAltIDGroup.Id = Convert.ToInt32(sqliteCommand.ExecuteScalar());
                 sqliteCommand.Dispose();
                 FIXSQLiteServer.SaveFIXGroup(this.fConnection, fixsecurityAltIDGroup, "ALT_ID_FIELDS", fixsecurityAltIDGroup.Id);
             }
@@ -238,7 +238,7 @@ namespace SmartQuant.Instruments
                 sqliteCommand.Dispose();
                 sqliteCommand = this.fConnection.CreateCommand();
                 sqliteCommand.CommandText = "SELECT LAST_INSERT_ROWID()";
-                int num = (int)sqliteCommand.ExecuteScalar();
+                int num = Convert.ToInt32(sqliteCommand.ExecuteScalar());
                 this.instrumentTypes.Add(num, type);
                 this.instrumentIds.Add(type, num);
             }
@@ -252,14 +252,14 @@ namespace SmartQuant.Instruments
             if (!this.pricerIds.ContainsKey(type))
             {
                 string value = type.FullName + ", " + type.Assembly.GetName().Name;
-                SQLiteCommand oleDbCommand = this.fConnection.CreateCommand();
-                oleDbCommand.CommandText = "INSERT INTO PRICER_TYPES (Type_) VALUES(?)";
-                oleDbCommand.Parameters.Add("@Type_", DbType.String).Value = value;
-                oleDbCommand.ExecuteNonQuery();
-                oleDbCommand.Dispose();
-                oleDbCommand = this.fConnection.CreateCommand();
-                oleDbCommand.CommandText = "SELECT LAST_INSERT_ROWID()";
-                int num = (int)oleDbCommand.ExecuteScalar();
+                SQLiteCommand sqliteCommand = this.fConnection.CreateCommand();
+                sqliteCommand.CommandText = "INSERT INTO PRICER_TYPES (Type_) VALUES(?)";
+                sqliteCommand.Parameters.Add("@Type_", DbType.String).Value = value;
+                sqliteCommand.ExecuteNonQuery();
+                sqliteCommand.Dispose();
+                sqliteCommand = this.fConnection.CreateCommand();
+                sqliteCommand.CommandText = "SELECT LAST_INSERT_ROWID()";
+                int num = Convert.ToInt32(sqliteCommand.ExecuteScalar());
                 this.pricerTypes.Add(num, type);
                 this.pricerIds.Add(type, num);
             }

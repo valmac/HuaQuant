@@ -39,7 +39,7 @@ namespace SmartQuant.FIX
                 sqliteCommand.Parameters.Add("@OuterID_", DbType.Int32).Value = outerID;
                 sqliteCommand.ExecuteNonQuery();
                 sqliteCommand = new SQLiteCommand("SELECT LAST_INSERT_ROWID()", connection);
-                num = (int)sqliteCommand.ExecuteScalar();
+                num = Convert.ToInt32(sqliteCommand.ExecuteScalar());
                 foreach (object obj3 in arrayList)
                 {
                     FIXGroup group2 = (FIXGroup)obj3;
@@ -48,7 +48,7 @@ namespace SmartQuant.FIX
                     sqliteCommand.Parameters.Add("@InnerID_", DbType.Int32).Value = num;
                     sqliteCommand.ExecuteNonQuery();
                     sqliteCommand = new SQLiteCommand("SELECT LAST_INSERT_ROWID()", connection);
-                    int innerID2 = (int)sqliteCommand.ExecuteScalar();
+                    int innerID2 = Convert.ToInt32(sqliteCommand.ExecuteScalar());
                     FIXSQLiteServer.SaveFIXGroup(connection, group2, table, outerID, innerID2);
                 }
             }

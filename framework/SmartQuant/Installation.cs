@@ -13,10 +13,6 @@ namespace SmartQuant
 		// Token: 0x06000011 RID: 17 RVA: 0x00002110 File Offset: 0x00001110
 		internal Installation()
 		{
-			this.timeChanged = false;
-			this.timeVerified = false;
-			this.demoExpired = false;
-			this.demoVerified = false;
 		}
 
 		// Token: 0x17000008 RID: 8
@@ -28,7 +24,7 @@ namespace SmartQuant
 			{
 				if (this.version == null)
 				{
-					this.version = new Version(this.GetRegistryValue(Registry.LocalMachine, "Version"));
+					this.version = new Version(1,0,100);
 				}
 				return this.version;
 			}
@@ -65,13 +61,16 @@ namespace SmartQuant
 			{
 				if (this.fQUANTSYS == null)
 				{
-					this.fQUANTSYS = new DirectoryInfo(this.GetRegistryValue(Registry.LocalMachine, "QUANTSYS").TrimEnd(new char[]
-					{
-						'\\'
-					}));
-				}
+                    string path = System.Environment.CurrentDirectory;
+                    this.fQUANTSYS = new DirectoryInfo(path.TrimEnd(new char[]{'\\'}));
+                    
+                }
 				return this.fQUANTSYS;
 			}
+            set
+            {
+                this.fQUANTSYS= value;
+            }
 		}
 
 		// Token: 0x1700000C RID: 12
@@ -84,21 +83,15 @@ namespace SmartQuant
 			get
 			{
 				if (this.fQUANTDAT == null)
-				{
-					this.fQUANTDAT = new DirectoryInfo(this.GetRegistryValue(Registry.LocalMachine, "QUANTDAT").TrimEnd(new char[]
-					{
-						'\\'
-					}));
+				{                   
+                    this.fQUANTDAT = new DirectoryInfo(this.QUANTSYS.FullName+"\\data");
+                    
 				}
 				return this.fQUANTDAT;
 			}
 			set
 			{
-				this.SetRegistryValue(Registry.LocalMachine, "QUANTDAT", value.FullName.TrimEnd(new char[]
-				{
-					'\\'
-				}) + "\\");
-				this.fQUANTDAT = null;
+				this.fQUANTDAT = value;
 			}
 		}
 
@@ -238,181 +231,11 @@ namespace SmartQuant
 		{
 		}
 
-		// Token: 0x17000018 RID: 24
-		// (get) Token: 0x06000025 RID: 37 RVA: 0x000023C8 File Offset: 0x000013C8
-		internal bool TimeChanged
-		{
-			get
-			{
-				if (!this.timeVerified)
-				{
-					try
-					{
-						if (!this.ContainsKey(Registry.CurrentUser, TIME_KEY))
-						{
-							Registry.CurrentUser.CreateSubKey(ROOT_PATH).Close();
-							this.SetRegistryValue(Registry.CurrentUser, TIME_KEY, new DateTime(1974, 2, 12).Ticks.ToString());
-						}
-						DateTime t = new DateTime(long.Parse(this.GetRegistryValue(Registry.CurrentUser, TIME_KEY)));
-						if (t > DateTime.Now)
-						{
-							this.timeChanged = true;
-						}
-						else
-						{
-							this.SetRegistryValue(Registry.CurrentUser, TIME_KEY, DateTime.Now.Ticks.ToString());
-							this.timeChanged = false;
-						}
-					}
-					catch
-					{
-						this.timeChanged = true;
-					}
-					finally
-					{
-						this.timeVerified = true;
-					}
-				}
-				return this.timeChanged;
-			}
-		}
-
-		// Token: 0x17000019 RID: 25
-		// (get) Token: 0x06000026 RID: 38 RVA: 0x000024CC File Offset: 0x000014CC
-		internal bool DemoExpired
-		{
-			get
-			{
-				if (!this.demoVerified)
-				{
-					try
-					{
-						if (!this.ContainsKey(Registry.CurrentUser, DEMO_KEY))
-						{
-							Registry.CurrentUser.CreateSubKey(ROOT_PATH).Close();
-							this.SetRegistryValue(Registry.CurrentUser, DEMO_KEY, DateTime.UtcNow.Ticks.ToString());
-						}
-						DateTime d = new DateTime(long.Parse(this.GetRegistryValue(Registry.CurrentUser, DEMO_KEY)));
-						double totalDays = (DateTime.UtcNow - d).TotalDays;
-						int num = 14 - (int)totalDays;
-						if (num > 0 && Environment.UserInteractive)
-						{
-							DemoDialog demoDialog = new DemoDialog();
-							demoDialog.SetText(string.Format("You are using a demonstration version of {0}.", this.MainProduct) + Environment.NewLine + Environment.NewLine + string.Format("This demo will expire in {0} days.", num));
-							demoDialog.ShowDialog();
-							demoDialog.Dispose();
-						}
-						this.demoExpired = (totalDays > 14.0);
-					}
-					catch
-					{
-						this.demoExpired = true;
-					}
-					finally
-					{
-						this.demoVerified = true;
-					}
-				}
-				return this.demoExpired;
-			}
-		}
-
-		// Token: 0x1700001A RID: 26
-		// (get) Token: 0x06000027 RID: 39 RVA: 0x00002608 File Offset: 0x00001608
-		internal bool RuntimeEnabled
-		{
-			get
-			{
-				AssemblyName name = Assembly.GetEntryAssembly().GetName();
-				return new ArrayList(this.allowedApplications).Contains(name.Name);
-			}
-		}
-
-		// Token: 0x06000028 RID: 40 RVA: 0x00002638 File Offset: 0x00001638
-		private string GetRegistryValue(RegistryKey rootKey, string subKey)
-		{
-			string result;
-			try
-			{
-				RegistryKey registryKey = rootKey.OpenSubKey(ROOT_PATH);
-				string text = registryKey.GetValue(subKey) as string;
-				registryKey.Close();
-				result = text;
-			}
-			catch (Exception innerException)
-			{
-				throw new ApplicationException("Installation::GetRegistryValue", innerException);
-			}
-			return result;
-		}
-
-		// Token: 0x06000029 RID: 41 RVA: 0x00002688 File Offset: 0x00001688
-		private bool ContainsKey(RegistryKey rootKey, string subKey)
-		{
-			bool result;
-			try
-			{
-				RegistryKey registryKey = rootKey.OpenSubKey(ROOT_PATH);
-				bool flag = false;
-				if (registryKey != null)
-				{
-					foreach (string a in registryKey.GetValueNames())
-					{
-						if (a == subKey)
-						{
-							flag = true;
-							break;
-						}
-					}
-					registryKey.Close();
-				}
-				result = flag;
-			}
-			catch (Exception innerException)
-			{
-				throw new ApplicationException("Installation::ContainsKey", innerException);
-			}
-			return result;
-		}
-
-		// Token: 0x0600002A RID: 42 RVA: 0x00002700 File Offset: 0x00001700
-		private void SetRegistryValue(RegistryKey rootKey, string subKey, string value)
-		{
-			try
-			{
-				RegistryKey registryKey = rootKey.OpenSubKey(ROOT_PATH, true);
-				registryKey.SetValue(subKey, value);
-				registryKey.Close();
-			}
-			catch (Exception innerException)
-			{
-				throw new ApplicationException("Installation::SetRegistryValue", innerException);
-			}
-		}
-
-		// Token: 0x0400000C RID: 12
-		private const string ROOT_PATH = "SOFTWARE\\SmartQuant Ltd\\QuantDeveloper .NET";
-
 		// Token: 0x0400000D RID: 13
 		private const string MAIN_PRODUCT = "QuantDeveloper";
 
 		// Token: 0x0400000E RID: 14
 		private const Edition EDITION = Edition.Enterprise;
-
-		// Token: 0x0400000F RID: 15
-		private const string QUANTSYS_KEY = "QUANTSYS";
-
-		// Token: 0x04000010 RID: 16
-		private const string QUANTDAT_KEY = "QUANTDAT";
-
-		// Token: 0x04000011 RID: 17
-		private const string VERSION_KEY = "Version";
-
-		// Token: 0x04000012 RID: 18
-		private const string TIME_KEY = "{CDD416EC-BA43-47f9-BEE8-89125652118F}";
-
-		// Token: 0x04000013 RID: 19
-		private const string DEMO_KEY = "{A7834A40-B64B-4efe-B697-DE670034DE0B}";
 
 		// Token: 0x04000014 RID: 20
 		private const string SUBDIR_SOLUTION = "solutions";
@@ -450,8 +273,6 @@ namespace SmartQuant
 		// Token: 0x0400001F RID: 31
 		private const string CATEGORY_OTHER = "Other";
 
-		// Token: 0x04000020 RID: 32
-		private const int NUM_OF_DEMO_DAYS = 14;
 
 		// Token: 0x04000021 RID: 33
 		private DirectoryInfo fQUANTSYS;
@@ -465,27 +286,5 @@ namespace SmartQuant
 		// Token: 0x04000024 RID: 36
 		private Version version;
 
-		// Token: 0x04000025 RID: 37
-		private bool timeChanged;
-
-		// Token: 0x04000026 RID: 38
-		private bool timeVerified;
-
-		// Token: 0x04000027 RID: 39
-		private bool demoExpired;
-
-		// Token: 0x04000028 RID: 40
-		private bool demoVerified;
-
-		// Token: 0x04000029 RID: 41
-		private string[] allowedApplications = new string[]
-		{
-			"QuantDeveloper",
-			"DataCenter",
-			"CATS2",
-			"Configurator",
-			"DatabaseManager",
-			"QSBenchmark"
-		};
 	}
 }

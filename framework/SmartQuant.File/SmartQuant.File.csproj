@@ -34,13 +34,8 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="SharpZipLib, Version=0.6.0.0, Culture=neutral, PublicKeyToken=58df05611e564e0c">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>.\SharpZipLib.dll</HintPath>
-    </Reference>
-    <Reference Include="SmartQuant.Data, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\SmartQuant\SmartQuant.Data\bin\Debug\SmartQuant.Data.dll</HintPath>
+    <Reference Include="SharpZipLib">
+      <HintPath>..\..\..\SmartQuant\SmartQuant.File\bin\Debug\SharpZipLib.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -75,6 +70,12 @@
     <Compile Include="SeriesFormatter.cs" />
     <Compile Include="Streamer.cs" />
     <Compile Include="TypeManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SmartQuant.Data\SmartQuant.Data.csproj">
+      <Project>{dc5ef2ad-bd9f-4359-9053-0ea421c74304}</Project>
+      <Name>SmartQuant.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -17,19 +17,19 @@
     </xs:element>
   </xs:schema>
   <type>
-    <name>SmartQuant.Data.Daily, SmartQuant.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=844f265c18b031f9</name>
+    <name>SmartQuant.Data.Daily, SmartQuant.Data, Version=1.0.0.0, Culture=neutral</name>
     <id>0</id>
   </type>
   <type>
-    <name>SmartQuant.Data.Trade, SmartQuant.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=844f265c18b031f9</name>
+    <name>SmartQuant.Data.Trade, SmartQuant.Data, Version=1.0.0.0, Culture=neutral</name>
     <id>2</id>
   </type>
   <type>
-    <name>SmartQuant.Data.Quote, SmartQuant.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=844f265c18b031f9</name>
+    <name>SmartQuant.Data.Quote, SmartQuant.Data, Version=1.0.0.0, Culture=neutral</name>
     <id>1</id>
   </type>
   <type>
-    <name>SmartQuant.Data.Bar, SmartQuant.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=844f265c18b031f9</name>
+    <name>SmartQuant.Data.Bar, SmartQuant.Data, Version=1.0.0.0, Culture=neutral</name>
     <id>3</id>
   </type>
 </types>

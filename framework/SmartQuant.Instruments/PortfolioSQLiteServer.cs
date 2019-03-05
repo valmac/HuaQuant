@@ -162,7 +162,7 @@ namespace SmartQuant.Instruments
                     sqliteCommand.Parameters.Add("@Persistent_", DbType.Boolean).Value = portfolio.Persistent;
                     sqliteCommand.ExecuteNonQuery();
                     sqliteCommand = new SQLiteCommand("SELECT LAST_INSERT_ROWID()", this.connection);
-                    portfolio.Id = (int)sqliteCommand.ExecuteScalar();
+                    portfolio.Id = Convert.ToInt32(sqliteCommand.ExecuteScalar());
                 }
                 foreach (object obj in portfolio.Transactions)
                 {
@@ -183,7 +183,7 @@ namespace SmartQuant.Instruments
                     sqliteCommand.Parameters.Add("@CommType_    ", DbType.Byte).Value = FIXCommType.ToFIX(transaction.TransactionCost.CommType);
                     sqliteCommand.ExecuteNonQuery();
                     sqliteCommand = new SQLiteCommand("SELECT LAST_INSERT_ROWID()", this.connection);
-                    transaction.Id = (int)sqliteCommand.ExecuteScalar();
+                    transaction.Id = Convert.ToInt32(sqliteCommand.ExecuteScalar());
                 }
                 foreach (object obj2 in portfolio.Account.Transactions)
                 {
@@ -196,12 +196,12 @@ namespace SmartQuant.Instruments
                     sqliteCommand.Parameters.Add("@Text_", DbType.String).Value = accountTransaction.Text;
                     sqliteCommand.ExecuteNonQuery();
                     sqliteCommand = new SQLiteCommand("SELECT LAST_INSERT_ROWID()", this.connection);
-                    accountTransaction.Id = (int)sqliteCommand.ExecuteScalar();
+                    accountTransaction.Id = Convert.ToInt32(sqliteCommand.ExecuteScalar());
                 }
             }
             catch (Exception innerException)
             {
-                throw new ApplicationException("PortfolioOleDbServer::Save", innerException);
+                throw new ApplicationException("PortfolioSQliteServer::Save", innerException);
             }
         }
 
@@ -235,13 +235,13 @@ namespace SmartQuant.Instruments
                     sqliteCommand.ExecuteNonQuery();
                     sqliteCommand.Dispose();
                     sqliteCommand = new SQLiteCommand("SELECT LAST_INSERT_ROWID()", this.connection);
-                    portfolio.Id = (int)sqliteCommand.ExecuteScalar();
+                    portfolio.Id = Convert.ToInt32(sqliteCommand.ExecuteScalar());
                     sqliteCommand.Dispose();
                     return;
                 }
                 catch (Exception innerException)
                 {
-                    throw new ApplicationException("PortfolioOleDbServer::Update", innerException);
+                    throw new ApplicationException("PortfolioSQliteServer::Update", innerException);
                 }
             }
             try
@@ -255,7 +255,7 @@ namespace SmartQuant.Instruments
             }
             catch (Exception innerException2)
             {
-                throw new ApplicationException("PortfolioOleDbServer::Update", innerException2);
+                throw new ApplicationException("PortfolioSQLiteServer::Update", innerException2);
             }
         }
 
@@ -284,11 +284,11 @@ namespace SmartQuant.Instruments
                     sqliteCommand.ExecuteNonQuery();
                     sqliteCommand = this.connection.CreateCommand();
                     sqliteCommand.CommandText = "SELECT LAST_INSERT_ROWID()";
-                    transaction.Id = (int)sqliteCommand.ExecuteScalar();
+                    transaction.Id = Convert.ToInt32(sqliteCommand.ExecuteScalar());
                 }
                 catch (Exception innerException)
                 {
-                    throw new ApplicationException("PortolioOleDbServer::Add", innerException);
+                    throw new ApplicationException("PortolioSQliteServer::Add", innerException);
                 }
             }
         }
@@ -310,11 +310,11 @@ namespace SmartQuant.Instruments
                     sqliteCommand.ExecuteNonQuery();
                     sqliteCommand = this.connection.CreateCommand();
                     sqliteCommand.CommandText = "SELECT LAST_INSERT_ROWID()";
-                    transaction.Id = (int)sqliteCommand.ExecuteScalar();
+                    transaction.Id = Convert.ToInt32(sqliteCommand.ExecuteScalar());
                 }
                 catch (Exception innerException)
                 {
-                    throw new ApplicationException("PortfolioOleDbServer::Add", innerException);
+                    throw new ApplicationException("PortfolioSQliteServer::Add", innerException);
                 }
             }
         }
@@ -337,7 +337,7 @@ namespace SmartQuant.Instruments
                 }
                 catch (Exception innerException)
                 {
-                    throw new ApplicationException("PortfolioOleDbServer::Clear", innerException);
+                    throw new ApplicationException("PortfolioSQliteServer::Clear", innerException);
                 }
             }
         }

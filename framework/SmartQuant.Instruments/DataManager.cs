@@ -242,8 +242,8 @@ namespace SmartQuant.Instruments
 		// Token: 0x06000169 RID: 361 RVA: 0x00004F34 File Offset: 0x00003F34
 		static DataManager()
 		{
-			DataManager.Init();
-		}
+            DataManager.Init();
+        }
 
 		// Token: 0x0600016A RID: 362 RVA: 0x00004FA0 File Offset: 0x00003FA0
 		public static void Init()

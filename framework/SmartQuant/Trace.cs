@@ -48,7 +48,7 @@ namespace SmartQuant
 		// Token: 0x0600009E RID: 158 RVA: 0x00003E62 File Offset: 0x00002E62
 		public static void WriteLine(string message)
 		{
-			Trace.WriteLine(string.Format("{0} {1}", Clock.Now, message));
+            System.Diagnostics.Trace.WriteLine(string.Format("{0} {1}", Clock.Now, message));
 		}
 
 		// Token: 0x0600009F RID: 159 RVA: 0x00003E7E File Offset: 0x00002E7E
