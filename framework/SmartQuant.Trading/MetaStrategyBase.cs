@@ -2288,5 +2288,38 @@ namespace SmartQuant.Trading
 			// Token: 0x040000C9 RID: 201
 			private Hashtable modes;
 		}
-	}
+        /*--------------------
+         * 增加下以功能
+         _____________________*/
+        public void RunTimeAddInstrument(Instrument inst, StrategyBase strategy, IMarketDataProvider marketDataProvider, IExecutionProvider executionProvider)
+        {
+
+            this.orderProcessor.Add(executionProvider);
+            this.providerDispatcher.Add(executionProvider);
+            this.RegisterStrategy(executionProvider, strategy);
+            executionProvider.Connect(this.maxConnectionTime * 1000);
+            this.marketDataDispatcher.Add(marketDataProvider, inst, null);
+            this.providerDispatcher.Add(marketDataProvider);
+            this.RegisterStrategy(marketDataProvider, strategy);
+            this.RegisterStrategy(marketDataProvider, inst, strategy);
+            marketDataProvider.Connect(this.maxConnectionTime * 1000);
+            inst.RequestMarketData(marketDataProvider, (MarketDataType)3);
+        }
+        public void RunTimeRemoveInstrument(Instrument inst, StrategyBase strategy, IMarketDataProvider marketDataProvider)
+        {
+            inst.CancelMarketData(marketDataProvider, (MarketDataType)3);
+            Dictionary<Instrument, List<StrategyBase>> dictionary = null;
+            if (this.marketDataTable.TryGetValue(marketDataProvider, out dictionary))
+            {
+                List<StrategyBase> list = null;
+                if (dictionary.TryGetValue(inst, out list))
+                {
+                    if (list.Contains(strategy))
+                    {
+                        list.Remove(strategy);
+                    }
+                }
+            }
+        }
+    }
 }

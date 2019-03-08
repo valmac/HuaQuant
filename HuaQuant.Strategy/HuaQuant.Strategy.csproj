@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{44A4B3DF-8E5F-482D-B5E0-D0B412BF837D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>HuaQuant.Strategy</RootNamespace>
+    <AssemblyName>HuaQuant.Strategy</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HuaMarketManager.cs" />
+    <Compile Include="HuaMetaStrategy.cs" />
+    <Compile Include="HuaStrategy.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\framework\SmartQuant.FIX\SmartQuant.FIX.csproj">
+      <Project>{fe44f098-0688-43a3-93fe-b5c085716bfe}</Project>
+      <Name>SmartQuant.FIX</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\framework\SmartQuant.Instruments\SmartQuant.Instruments.csproj">
+      <Project>{7b3ae873-aedb-48eb-85c8-2a3b5c2bd27d}</Project>
+      <Name>SmartQuant.Instruments</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\framework\SmartQuant.Providers\SmartQuant.Providers.csproj">
+      <Project>{d06c936d-7f50-414e-90f5-7615a6a66d4b}</Project>
+      <Name>SmartQuant.Providers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\framework\SmartQuant.Trading\SmartQuant.Trading.csproj">
+      <Project>{b6715f4a-1097-4533-9803-cf646e1ae9e8}</Project>
+      <Name>SmartQuant.Trading</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
